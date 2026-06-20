@@ -1,5 +1,5 @@
 {
-  "version": 1.1,
+  "version": 1,
   "updatedAt": "2026-06-20",
   "description": "ADBSweep 包名数据库 — 用于热更新",
   "packages": {
@@ -1482,9 +1482,8 @@
       "name": "天际通",
       "level": "Safe",
       "reason": "天际通全球上网独立应用（另见com.huawei.skytone为同一应用不同版本）"
-    }
-	
-	    "android": {
+    },
+	"android": {
       "name": "安卓系统根进程",
       "level": "Forbidden",
       "reason": "系统最底层的根进程，停用后手机将立即黑屏、无限重启或彻底死机"
@@ -2858,7 +2857,7 @@
       "name": "IFAA生物认证管理器",
       "level": "Caution",
       "reason": "网页指纹支付标准服务，APP内指纹不受影响"
-    }	
+    }
   },
   "keywords": {
     "launcher": "桌面启动器",
