@@ -1,5 +1,5 @@
 {
-  "version": 1.1,
+  "version": 1.2,
   "updatedAt": "2026-06-20",
   "description": "ADBSweep 包名数据库 — 用于热更新",
   "packages": {
@@ -23,40 +23,15 @@
       "level": "Forbidden",
       "reason": "华为设备底层扩展框架，停用将导致华为特有功能全部失效"
     },
-    "com.android.bluetooth": {
-      "name": "原生蓝牙服务",
-      "level": "Forbidden",
-      "reason": "蓝牙功能的核心系统服务，停用后蓝牙完全不可用"
-    },
     "com.android.externalstorage": {
       "name": "外部存储管理",
       "level": "Forbidden",
       "reason": "管理SD卡和外部存储的系统服务，停用后无法访问外部存储"
     },
-    "com.android.keychain": {
-      "name": "密钥链服务",
-      "level": "Forbidden",
-      "reason": "系统密钥/证书管理服务，停用后Wi-Fi密码、VPN证书等将失效"
-    },
     "com.android.location.fused": {
       "name": "融合定位服务",
       "level": "Forbidden",
       "reason": "多传感器融合定位核心服务，停用后所有APP定位功能均不可用"
-    },
-    "com.android.networkstack.inprocess": {
-      "name": "网络栈内置进程",
-      "level": "Forbidden",
-      "reason": "系统网络协议栈核心进程，停用后Wi-Fi和移动数据网络将瘫痪"
-    },
-    "com.android.networkstack.tethering.inprocess": {
-      "name": "热点内置网络进程",
-      "level": "Forbidden",
-      "reason": "移动热点功能依赖的底层网络进程，停用后无法开启热点"
-    },
-    "com.android.nfc": {
-      "name": "NFC服务",
-      "level": "Forbidden",
-      "reason": "NFC功能核心服务，停用后NFC刷卡/支付/门禁等功能全部失效"
     },
     "com.android.permissioncontroller": {
       "name": "权限控制器",
@@ -72,31 +47,6 @@
       "name": "通话短信存储服务",
       "level": "Forbidden",
       "reason": "通话记录和短信内容的核心存储服务，停用后通讯功能异常"
-    },
-    "com.android.providers.settings": {
-      "name": "系统设置存储",
-      "level": "Forbidden",
-      "reason": "系统设置数据存储服务，停用后所有设置项无法读取，系统行为混乱"
-    },
-    "com.android.se": {
-      "name": "安全元件服务",
-      "level": "Forbidden",
-      "reason": "硬件安全芯片（Secure Element）管理服务，停用后NFC安全支付不可用"
-    },
-    "com.android.server.telecom": {
-      "name": "电信服务服务端",
-      "level": "Forbidden",
-      "reason": "通话功能底层服务器，停用后将完全无法拨打和接听电话"
-    },
-    "com.android.settings": {
-      "name": "设置",
-      "level": "Forbidden",
-      "reason": "系统设置应用的核心入口，停用后将无法进入设置界面"
-    },
-    "com.android.systemui": {
-      "name": "系统UI",
-      "level": "Forbidden",
-      "reason": "状态栏/导航栏/通知/锁屏界面的核心服务，停用后手机界面完全瘫痪"
     },
     "com.android.packageinstaller": {
       "name": "应用安装程序",
@@ -318,16 +268,6 @@
       "level": "Caution",
       "reason": "紧急警报/地震预警等小区广播接收服务，停用后将错过紧急广播"
     },
-    "com.android.cellbroadcastservice": {
-      "name": "小区广播服务",
-      "level": "Caution",
-      "reason": "小区广播后台服务，同上，涉及紧急预警推送"
-    },
-    "com.android.mms.service": {
-      "name": "彩信服务",
-      "level": "Caution",
-      "reason": "MMS彩信收发底层服务，停用后无法发送/接收彩信"
-    },
     "com.android.networkstack.permissionconfig": {
       "name": "网络权限配置服务",
       "level": "Caution",
@@ -338,40 +278,20 @@
       "level": "Caution",
       "reason": "运营商网络通知服务，停用后无法接收运营商网络状态通知"
     },
-    "com.android.carrierconfig": {
-      "name": "运营商配置服务",
-      "level": "Caution",
-      "reason": "运营商网络参数自动配置服务，换SIM卡后可能无法自动更新网络配置"
-    },
     "com.android.connectivity.resources": {
       "name": "网络连接资源包",
       "level": "Caution",
       "reason": "网络连接图标/状态文本等界面资源包"
-    },
-    "com.android.wifi.resources": {
-      "name": "Wi-Fi资源包",
-      "level": "Caution",
-      "reason": "Wi-Fi功能界面资源包，停用后Wi-Fi相关UI可能显示异常"
     },
     "com.android.captiveportallogin": {
       "name": "公共Wi-Fi认证登录",
       "level": "Caution",
       "reason": "公共Wi-Fi Portal认证登录服务，停用后机场/酒店Wi-Fi无法弹出登录页"
     },
-    "com.android.hotspot2.osulogin": {
-      "name": "热点2.0登录页",
-      "level": "Caution",
-      "reason": "Passpoint/Hotspot2.0安全热点自动登录服务"
-    },
     "com.android.proxyhandler": {
       "name": "网络代理处理服务",
       "level": "Caution",
       "reason": "系统HTTP代理处理服务，停用后部分网络环境代理可能失效"
-    },
-    "com.android.pacprocessor": {
-      "name": "代理配置解析服务",
-      "level": "Caution",
-      "reason": "PAC代理自动配置脚本解析服务"
     },
     "com.android.statementservice": {
       "name": "账号声明同步服务",
@@ -668,40 +588,20 @@
       "level": "Caution",
       "reason": "设备首次激活和云端注册服务"
     },
-    "com.android.providers.downloads": {
-      "name": "下载存储服务",
-      "level": "Caution",
-      "reason": "系统下载管理器核心数据库，停用后下载功能不可用"
-    },
-    "com.android.providers.downloads.ui": {
-      "name": "下载管理UI",
-      "level": "Caution",
-      "reason": "下载管理的用户界面组件"
-    },
     "com.android.providers.calendar": {
       "name": "日历数据存储",
       "level": "Caution",
       "reason": "日历事件数据存储服务，停用后日历数据丢失且无法同步"
-    },
-    "com.android.providers.contacts": {
-      "name": "联系人存储服务",
-      "level": "Caution",
-      "reason": "联系人数据库核心存储，停用后联系人信息将不可用"
     },
     "com.android.providers.blockednumber": {
       "name": "黑名单存储服务",
       "level": "Caution",
       "reason": "骚扰拦截/黑名单数据存储，停用后黑名单功能失效"
     },
-    "com.android.providers.userdictionary": {
-      "name": "用户词典存储",
-      "level": "Caution",
-      "reason": "用户自定义输入词典存储服务"
-    },
     "com.android.providers.media.module": {
       "name": "媒体模块存储扩展",
-      "level": "Caution",
-      "reason": "媒体数据库扩展模块"
+      "level": "Forbidden",
+      "reason": "媒体数据库扩展模块，相册、视频、音频读取底层"
     },
     "com.android.mtp": {
       "name": "MTP媒体传输服务",
@@ -720,7 +620,7 @@
     },
     "com.android.calllogbackup": {
       "name": "通话记录备份服务",
-      "level": "Caution",
+      "level": "Safe",
       "reason": "通话记录备份服务"
     },
     "com.android.wallpaperbackup": {
@@ -728,50 +628,40 @@
       "level": "Caution",
       "reason": "壁纸设置备份服务"
     },
-    "com.android.storagemanager": {
-      "name": "存储管理",
-      "level": "Caution",
-      "reason": "存储空间清理/管理的系统服务"
-    },
     "com.android.vpndialogs": {
       "name": "VPN弹窗界面",
       "level": "Caution",
       "reason": "VPN连接确认对话框组件"
     },
-    "com.android.managedprovisioning": {
-      "name": "工作资料设置",
-      "level": "Caution",
-      "reason": "企业工作资料/设备管理的配置服务，停用后工作模式的设置功能不可用"
+    "com.google.android.gms": {
+      "name": "Google Play 服务",
+      "level": "Safe",
+      "reason": "谷歌框架核心，删后所有谷歌软件失效"
     },
-    "com.android.inputdevices": {
-      "name": "输入设备管理",
-      "level": "Caution",
-      "reason": "外接键盘/鼠标/手柄等输入设备管理服务"
+    "com.android.vending": {
+      "name": "Google Play 商店",
+      "level": "Safe",
+      "reason": "谷歌应用商店"
     },
-    "com.android.modulemetadata": {
-      "name": "模块元数据服务",
-      "level": "Caution",
-      "reason": "系统模块元数据管理"
+	"com.google.android.gsf": {
+      "name": "Google 服务框架",
+      "level": "Safe",
+      "reason": "GMS 底层依赖"
     },
-    "com.android.localtransport": {
-      "name": "本地传输服务",
-      "level": "Caution",
-      "reason": "系统内进程间本地数据传输服务"
+	"com.google.android.onetimeinitializer": {
+      "name": "Google 初始化",
+      "level": "Safe",
+      "reason": "谷歌服务初始化服务"
     },
-    "com.android.printservice.recommendation": {
-      "name": "打印服务推荐",
-      "level": "Caution",
-      "reason": "向用户推荐打印插件的服务"
-    },
+	"com.google.android.configupdater": {
+      "name": "Google 服务更新",
+      "level": "Safe",
+      "reason": "谷歌服务自动更新服务"
+    },		
     "com.android.cts.priv.ctsshim": {
       "name": "CTS私有兼容层",
       "level": "Caution",
       "reason": "Android兼容性测试套件私有兼容层"
-    },
-    "com.android.cts.ctsshim": {
-      "name": "CTS兼容层",
-      "level": "Caution",
-      "reason": "Android兼容性测试套件兼容层"
     },
     "com.huawei.mdm.overlay": {
       "name": "设备管理覆盖层",
@@ -789,9 +679,9 @@
       "reason": "AI动作服务的资源覆盖层"
     },
     "com.android.systemui.overlay": {
-      "name": "系统UI覆盖层",
+      "name": "系统界面 SystemUI",
       "level": "Caution",
-      "reason": "系统UI的资源覆盖层"
+      "reason": "状态栏、控制中心、锁屏全部失效"
     },
     "com.android.frameworkres.overlay": {
       "name": "安卓框架资源覆盖层",
@@ -813,40 +703,25 @@
       "level": "Caution",
       "reason": "华为钱包的SDK底层库，被支付/门禁卡等功能依赖"
     },
-    "com.android.phone": {
-      "name": "电话",
-      "level": "Basic",
-      "reason": "手机拨号功能应用，停用后无法拨打电话（但可接收紧急呼叫）"
-    },
-    "com.android.incallui": {
-      "name": "通话界面",
-      "level": "Basic",
-      "reason": "通话中的界面（接听/挂断/数字键盘），停用后通话时无操作界面"
-    },
-    "com.android.mms": {
-      "name": "信息（短信彩信）",
-      "level": "Basic",
-      "reason": "系统短信/彩信收发应用，停用后无法收发普通短信"
-    },
     "com.huawei.ohos.mms": {
       "name": "鸿蒙信息",
       "level": "Basic",
       "reason": "鸿蒙版短信应用，同上"
     },
-    "com.android.emergency": {
-      "name": "紧急求助",
-      "level": "Basic",
-      "reason": "紧急呼叫/SOS求助功能，涉及人身安全场景"
-    },
     "com.android.stk": {
       "name": "SIM卡工具包",
       "level": "Basic",
-      "reason": "SIM卡运营商内置菜单工具，部分银行/支付功能依赖此服务"
+      "reason": "SIM卡运营商内置菜单工具，停用后增值服务弹窗失效"
     },
-    "com.android.simappdialog": {
-      "name": "SIM卡应用弹窗",
+    "com.android.carrierdefaultapp": {
+      "name": "运营商默认应用",
+      "level": "Safe",
+      "reason": "运营商预装推送、弹窗消失"
+    },
+    "com.qualcomm.qti.simcontacts": {
+      "name": "SIM 卡联系人管理",
       "level": "Basic",
-      "reason": "SIM卡应用的弹窗界面组件"
+      "reason": "SIM 卡联系人读取管理"
     },
     "com.huawei.phone.recorder": {
       "name": "通话录音服务",
@@ -1293,16 +1168,6 @@
       "level": "Caution",
       "reason": "所有APP依赖的系统文件选择器，停用后任何APP都无法选择/上传文件"
     },
-    "com.android.htmlviewer": {
-      "name": "HTML网页查看器",
-      "level": "Safe",
-      "reason": "系统内置HTML文件查看器，独立工具不影响网页浏览"
-    },
-    "com.android.companiondevicemanager": {
-      "name": "配套设备管理",
-      "level": "Caution",
-      "reason": "管理手表/耳机等蓝牙配件配对和连接的系统服务，停用后智能穿戴设备可能无法正常配对"
-    },
     "com.android.apps.tag": {
       "name": "NFC标签工具",
       "level": "Safe",
@@ -1318,11 +1183,6 @@
       "level": "Caution",
       "reason": "ADB调试依赖的Shell服务，停用后将导致adb shell命令不可用，影响开发者调试"
     },
-    "com.android.internal.systemui.navbar.gestural": {
-      "name": "手势导航栏UI",
-      "level": "Caution",
-      "reason": "系统手势导航核心组件，停用可能导致屏幕底部导航手势全部失效"
-    },
     "com.android.wallpapercropper": {
       "name": "壁纸裁剪工具",
       "level": "Safe",
@@ -1332,6 +1192,11 @@
       "name": "动态壁纸选择器",
       "level": "Safe",
       "reason": "动态壁纸选择界面组件"
+    },
+    "com.miui.miwallpaper.overlay.customize": {
+      "name": "壁纸自定义覆盖层",
+      "level": "Safe",
+      "reason": "壁纸个性化配套组件"
     },
     "com.huawei.systemmanager": {
       "name": "手机管家",
@@ -1403,11 +1268,6 @@
       "level": "Safe",
       "reason": "华为探索主题动态壁纸资源包"
     },
-    "com.android.dreams.basic": {
-      "name": "屏保图片程序",
-      "level": "Safe",
-      "reason": "早期安卓遗留的屏保/白日梦功能，现已基本不使用"
-    },
     "com.huawei.bd": {
       "name": "用户体验计划",
       "level": "Safe",
@@ -1453,11 +1313,6 @@
       "level": "Safe",
       "reason": "安卓原生计算器应用（AOSP版），独立应用可安全停用"
     },
-    "com.android.deskclock": {
-      "name": "时钟",
-      "level": "Basic",
-      "reason": "安卓原生时钟/闹钟应用（AOSP版），停用后闹钟功能不可用"
-    },
     "com.huawei.himovie": {
       "name": "华为视频",
       "level": "Safe",
@@ -1483,80 +1338,45 @@
       "level": "Safe",
       "reason": "天际通全球上网独立应用（另见com.huawei.skytone为同一应用不同版本）"
     },
-	"android": {
-      "name": "安卓系统根进程",
-      "level": "Forbidden",
-      "reason": "系统最底层的根进程，停用后手机将立即黑屏、无限重启或彻底死机"
-    },
     "android.aosp.overlay": {
       "name": "AOSP原生界面覆盖层",
       "level": "Caution",
       "reason": "安卓原生开源系统UI适配覆盖层，用于原生界面兼容适配；停用会导致部分原生页面显示错乱，不会整机崩溃"
-    },
-    "android.ext.services": {
-      "name": "安卓扩展服务进程",
-      "level": "Forbidden",
-      "reason": "系统扩展服务的宿主进程，悬浮窗、快捷设置、系统插件等扩展功能均依赖，停用将导致大量系统功能崩溃"
-    },
-    "android.ext.shared": {
-      "name": "安卓扩展共享库",
-      "level": "Forbidden",
-      "reason": "全局系统共享运行库，绝大多数系统组件与第三方应用依赖，停用会大面积闪退、系统服务宕机"
     },
     "android.miui.overlay": {
       "name": "MIUI系统界面覆盖层",
       "level": "Caution",
       "reason": "小米MIUI定制UI适配覆盖层，控制中心、主题、专属动效依赖；停用会出现MIUI界面元素显示异常、布局错乱"
     },
-    "com.android.apps.tag": {
-      "name": "NFC标签工具",
-      "level": "Safe",
-      "reason": "独立NFC标签读写管理工具，仅影响标签录入读取，NFC刷卡、支付等核心功能不受影响"
-    },
-    "com.android.backupconfirm": {
-      "name": "备份确认工具",
-      "level": "Caution",
-      "reason": "整机系统备份弹窗确认组件，停用后无法执行完整系统备份，日常通讯、使用功能无影响"
-    },
     "com.android.bips": {
       "name": "系统基础打印服务",
       "level": "Caution",
-      "reason": "安卓原生底层打印服务，停用系统自带打印功能失效，第三方打印应用不受限制"
+      "reason": "系统底层打印服务，停用系统打印功能失效"
     },
     "com.android.bluetooth": {
       "name": "原生蓝牙核心服务",
       "level": "Forbidden",
       "reason": "蓝牙底层核心服务，停用后蓝牙耳机、手环、蓝牙传输、车载蓝牙全部失效"
     },
-    "com.android.bluetoothmidiservice": {
-      "name": "蓝牙MIDI音频服务",
-      "level": "Caution",
-      "reason": "专业蓝牙电子乐器MIDI协议适配服务，普通蓝牙耳机、音箱音频功能不受影响"
-    },
     "com.android.browser": {
-      "name": "AOSP原生浏览器",
+      "name": "生浏览器",
       "level": "Safe",
-      "reason": "安卓开源原生浏览器，MIUI自带浏览器独立，停用仅该原生程序无法打开"
+      "reason": "系统浏览器，停用后第三方浏览器可以替代"
     },
     "com.android.calendar": {
-      "name": "AOSP原生日历",
-      "level": "Safe",
-      "reason": "原生系统日历应用，小米MIUI日历独立，停用仅原生程序失效，日程提醒不受干扰"
+      "name": "日历",
+      "level": "Basic",
+      "reason": "停用后日历不可用"
     },
-    "com.android.calllogbackup": {
-      "name": "通话记录备份服务",
-      "level": "Caution",
-      "reason": "通话记录自动云端同步组件，停用记录不会自动同步，通话功能正常"
+    "com.miui.cleanmaster": {
+      "name": "垃圾清理",
+      "level": "Basic",
+      "reason": "停用后手机管家一键清理功能消失"
     },
     "com.android.camera": {
-      "name": "AOSP原生相机",
-      "level": "Safe",
-      "reason": "安卓原生相机程序，小米定制相机独立，停用不影响扫码、拍照、录像核心功能"
-    },
-    "com.android.captiveportallogin": {
-      "name": "公共Wi-Fi认证登录",
-      "level": "Caution",
-      "reason": "酒店、机场、商场公共WiFi弹窗认证组件，停用无法自动弹出登录页，可手动浏览器访问认证网页"
+      "name": "相机",
+      "level": "Basic",
+      "reason": "相机程序，停用后原生相机扫码、拍照、录像核心功能不可用，不建议停用"
     },
     "com.android.carrierconfig": {
       "name": "运营商网络配置服务",
@@ -1567,11 +1387,6 @@
       "name": "小区广播预警服务",
       "level": "Basic",
       "reason": "气象、地震、洪水等灾害应急预警推送服务，停用无法接收紧急预警，涉及人身安全场景不建议禁用"
-    },
-    "com.android.certinstaller": {
-      "name": "证书安装器",
-      "level": "Caution",
-      "reason": "VPN、企业办公、内网安全证书安装工具，停用无法导入自定义加密证书"
     },
     "com.android.companiondevicemanager": {
       "name": "蓝牙配套设备管理器",
@@ -1588,20 +1403,15 @@
       "level": "Caution",
       "reason": "安卓设备标准化兼容性测试组件，普通用户停用无感知，仅影响开发者调试、设备出厂检测"
     },
-    "com.android.cts.priv.ctsshim": {
-      "name": "CTS私有兼容层",
-      "level": "Caution",
-      "reason": "CTS测试私有底层兼容组件，仅设备出厂质检使用，日常手机使用无任何影响"
-    },
     "com.android.deskclock": {
       "name": "原生时钟闹钟",
       "level": "Basic",
       "reason": "AOSP系统闹钟底层依赖程序，停用整机所有闹钟、倒计时功能失效，影响日程提醒"
     },
     "com.android.dreams.basic": {
-      "name": "基础白日梦屏保",
+      "name": "基本互动屏保",
       "level": "Safe",
-      "reason": "老旧安卓遗留息屏屏保组件，MIUI已完全弃用，停用无任何功能感知"
+      "reason": "基本互对屏保"
     },
     "com.android.dreams.phototable": {
       "name": "图库屏保渲染组件",
@@ -1618,11 +1428,6 @@
       "level": "Basic",
       "reason": "手机紧急呼叫、急救信息展示核心界面，停用无法一键触发SOS紧急电话，涉及人身安全"
     },
-    "com.android.externalstorage": {
-      "name": "外部存储管理",
-      "level": "Forbidden",
-      "reason": "SD卡、U盘、移动硬盘挂载核心服务，停用整机无法读取所有外接存储设备，文件管理器崩溃"
-    },
     "com.android.fileexplorer": {
       "name": "AOSP原生文件管理器",
       "level": "Safe",
@@ -1636,7 +1441,7 @@
     "com.android.htmlviewer": {
       "name": "本地HTML查看器",
       "level": "Safe",
-      "reason": "独立本地网页文件轻量打开工具，浏览器在线网页浏览功能完全不受影响"
+      "reason": "独立本地网页文件轻量打开工具，浏览器在线网页浏览功能不受影响"
     },
     "com.android.incallui": {
       "name": "通话交互界面",
@@ -1701,17 +1506,12 @@
     "com.android.keychain": {
       "name": "系统密钥链服务",
       "level": "Forbidden",
-      "reason": "WiFi、VPN密钥存储核心，停用所有自动加密登录失效"
+      "reason": "WiFi、VPN密钥，支付，加密证书底层"
     },
     "com.android.localtransport": {
       "name": "进程本地传输服务",
       "level": "Caution",
       "reason": "系统内部数据交换通道，停用同步轻微延迟，无崩溃风险"
-    },
-    "com.android.location.fused": {
-      "name": "融合定位服务",
-      "level": "Forbidden",
-      "reason": "GPS/WiFi/基站定位总服务，停用所有APP无法获取位置"
     },
     "com.android.managedprovisioning": {
       "name": "企业工作资料配置",
@@ -1733,11 +1533,6 @@
       "level": "Caution",
       "reason": "动态模块信息管理，普通用户无明显变化"
     },
-    "com.android.mtp": {
-      "name": "MTP媒体传输",
-      "level": "Caution",
-      "reason": "USB连电脑传文件，停用可使用云/OTG替代"
-    },
     "com.android.networkstack.inprocess": {
       "name": "网络栈核心进程",
       "level": "Forbidden",
@@ -1752,11 +1547,6 @@
       "name": "通用网络栈覆盖层",
       "level": "Caution",
       "reason": "网络通用兼容适配，仅特殊网络异常"
-    },
-    "com.android.networkstack.permissionconfig": {
-      "name": "网络权限配置",
-      "level": "Caution",
-      "reason": "APP联网权限管控，异常可手动修复"
     },
     "com.android.networkstack.tethering.inprocess": {
       "name": "热点底层进程",
@@ -1775,7 +1565,7 @@
     },
     "com.android.nfc": {
       "name": "NFC核心服务",
-      "level": "Forbidden",
+      "level": "Caution",
       "reason": "刷卡、公交、支付底层硬件服务，停用NFC完全失效"
     },
     "com.android.onetimeinitializer": {
@@ -1783,20 +1573,10 @@
       "level": "Safe",
       "reason": "新机/恢复出厂配置程序，初始化后停用无影响"
     },
-    "com.android.ons": {
-      "name": "运营商通知服务",
-      "level": "Caution",
-      "reason": "欠费、信号运营商弹窗，通话上网正常"
-    },
     "com.android.pacprocessor": {
       "name": "代理脚本解析",
       "level": "Caution",
       "reason": "企业内网PAC代理，家用网络无作用"
-    },
-    "com.android.permissioncontroller": {
-      "name": "权限控制器",
-      "level": "Forbidden",
-      "reason": "全部应用权限管理核心，停用权限彻底失控"
     },
     "com.android.phone": {
       "name": "原生电话拨号",
@@ -1807,21 +1587,6 @@
       "name": "打印插件推荐",
       "level": "Caution",
       "reason": "打印弹窗推荐，手动选择插件不受影响"
-    },
-    "com.android.printspooler": {
-      "name": "打印队列服务",
-      "level": "Basic",
-      "reason": "整机打印调度，停用无法连接打印机"
-    },
-    "com.android.providers.blockednumber": {
-      "name": "黑名单存储",
-      "level": "Caution",
-      "reason": "骚扰拦截号码库，停用拦截失效"
-    },
-    "com.android.providers.calendar": {
-      "name": "日历数据存储",
-      "level": "Caution",
-      "reason": "日程数据库，停用日历无法读写事件"
     },
     "com.android.providers.contacts": {
       "name": "联系人数据库",
@@ -1838,25 +1603,10 @@
       "level": "Caution",
       "reason": "下载页面UI，后台下载可正常进行"
     },
-    "com.android.providers.media": {
-      "name": "媒体索引服务",
-      "level": "Forbidden",
-      "reason": "图片视频音频全局索引，图库无法加载文件"
-    },
-    "com.android.providers.media.module": {
-      "name": "媒体扩展模块",
-      "level": "Caution",
-      "reason": "小众媒体格式兼容，主流图片视频正常"
-    },
     "com.android.providers.settings": {
       "name": "系统设置数据库",
       "level": "Forbidden",
       "reason": "亮度、网络、主题全部配置存储，设置错乱崩溃"
-    },
-    "com.android.providers.telephony": {
-      "name": "通话短信存储",
-      "level": "Forbidden",
-      "reason": "通话记录短信底层数据库，通讯频繁闪退丢记录"
     },
     "com.android.providers.userdictionary": {
       "name": "输入法词典存储",
@@ -1868,19 +1618,14 @@
       "level": "Safe",
       "reason": "恢复出厂配置工具，初始化后无作用"
     },
-    "com.android.proxyhandler": {
-      "name": "网络代理处理",
-      "level": "Caution",
-      "reason": "全局HTTP代理，普通用户无感知"
-    },
     "com.android.quicksearchbox": {
-      "name": "原生全局搜索",
+      "name": "桌面全局搜索",
       "level": "Safe",
-      "reason": "AOSP桌面搜索，MIUI搜索独立不受影响"
+      "reason": "桌面全局搜索，MIUI搜索独立不受影响，停用后全局负一屏搜索不可用"
     },
     "com.android.se": {
       "name": "安全芯片SE管理",
-      "level": "Forbidden",
+      "level": "Caution",
       "reason": "加密芯片底层，NFC支付、指纹加密失效"
     },
     "com.android.server.telecom": {
@@ -1894,9 +1639,9 @@
       "reason": "通话录音、来电美化界面异常，通话本身正常"
     },
     "com.android.settings": {
-      "name": "原生系统设置",
+      "name": "系统设置",
       "level": "Forbidden",
-      "reason": "原生设置入口，停用无法进入设置界面"
+      "reason": "系统设置入口，停用无法进入设置界面"
     },
     "com.android.settings.intelligence": {
       "name": "设置智能推荐",
@@ -1907,16 +1652,6 @@
       "name": "MIUI设置覆盖层",
       "level": "Caution",
       "reason": "设置页面UI适配，布局错乱但功能可用"
-    },
-    "com.android.sharedstoragebackup": {
-      "name": "共享存储备份",
-      "level": "Caution",
-      "reason": "文件自动备份，手动复制不受影响"
-    },
-    "com.android.shell": {
-      "name": "系统Shell终端",
-      "level": "Caution",
-      "reason": "ADB调试依赖，不连电脑无影响"
     },
     "com.android.simappdialog": {
       "name": "SIM弹窗组件",
@@ -1932,16 +1667,6 @@
       "name": "原生铃声选择器",
       "level": "Safe",
       "reason": "AOSP铃声面板，MIUI铃声独立"
-    },
-    "com.android.statementservice": {
-      "name": "账号同步服务",
-      "level": "Caution",
-      "reason": "跨APP账号同步，本地登录正常"
-    },
-    "com.android.stk": {
-      "name": "SIM卡工具包",
-      "level": "Basic",
-      "reason": "运营商SIM增值服务，银行SIM支付依赖"
     },
     "com.android.storagemanager": {
       "name": "存储管理服务",
@@ -2129,9 +1854,9 @@
       "reason": "流线柔和图标资源，基础功能不受限"
     },
     "com.android.thememanager": {
-      "name": "主题全局管理",
+      "name": "主题",
       "level": "Caution",
-      "reason": "壁纸图标字体总调度，默认主题正常使用"
+      "reason": "停用后主体壁纸图标字体失效，默认主题正常使用"
     },
     "com.android.thememanager.module": {
       "name": "主题扩展模块",
@@ -2144,29 +1869,9 @@
       "reason": "开发者调试工具，普通用户无感知"
     },
     "com.android.updater": {
-      "name": "原生系统更新",
-      "level": "Safe",
-      "reason": "AOSP原生OTA，MIUI更新独立"
-    },
-    "com.android.vpndialogs": {
-      "name": "VPN弹窗界面",
+      "name": "系统更新",
       "level": "Caution",
-      "reason": "VPN连接确认弹窗，后台VPN可运行"
-    },
-    "com.android.wallpaper.livepicker": {
-      "name": "动态壁纸选择器",
-      "level": "Safe",
-      "reason": "动态壁纸预览，静态壁纸正常设置"
-    },
-    "com.android.wallpaperbackup": {
-      "name": "壁纸备份服务",
-      "level": "Caution",
-      "reason": "壁纸配置自动备份，手动设置壁纸正常"
-    },
-    "com.android.wallpapercropper": {
-      "name": "壁纸裁剪工具",
-      "level": "Safe",
-      "reason": "自定义壁纸裁剪，系统壁纸无需裁剪"
+      "reason": "系统更新核心服务,停用后无法ota更新"
     },
     "com.android.wifi.resources": {
       "name": "WiFi界面资源包",
@@ -2237,11 +1942,6 @@
       "name": "谷歌文件管理器",
       "level": "Safe",
       "reason": "谷歌原生文件工具，MIUI文件管理独立"
-    },
-    "com.google.android.marvin.talkback": {
-      "name": "TalkBack无障碍",
-      "level": "Safe",
-      "reason": "屏幕朗读，普通人停用无影响"
     },
     "com.google.android.networkstack.overlay": {
       "name": "谷歌网络覆盖层",
@@ -2373,7 +2073,22 @@
       "level": "Caution",
       "reason": "无线投屏失效，有线投屏可替代"
     },
+    "com.xiaomi.mirror": {
+      "name": "MIUI + 跨设备协同",
+      "level": "Caution",
+      "reason": "手机电脑协同、文件拖拽失效"
+    },
+    "com.miui.carlink": {
+      "name": "车载互联 CarLink",
+      "level": "Safe",
+      "reason": "车机互联功能失效"
+    },
     "com.mipay.wallet": {
+      "name": "小米钱包",
+      "level": "Safe",
+      "reason": "钱包APP本体，NFC底层服务不受影响"
+    },
+    "com.xiaomi.jr": {
       "name": "小米钱包",
       "level": "Safe",
       "reason": "钱包APP本体，NFC底层服务不受影响"
@@ -2386,7 +2101,7 @@
     "com.miui.analytics": {
       "name": "用户统计服务",
       "level": "Safe",
-      "reason": "使用数据上报，无硬件功能故障"
+      "reason": "用户行为收集，无功能影响"
     },
     "com.miui.audioeffect": {
       "name": "音频音效服务",
@@ -2399,12 +2114,12 @@
       "reason": "通话录音失效，麦克风收音正常"
     },
     "com.miui.backup": {
-      "name": "小米云备份",
+      "name": "备份",
       "level": "Safe",
-      "reason": "云端备份程序，本地文件不受影响"
+      "reason": "本地备份程序，停用后备份功能失效"
     },
     "com.miui.bugreport": {
-      "name": "故障反馈工具",
+      "name": "用户反馈",
       "level": "Safe",
       "reason": "日志提交工具，日常无作用"
     },
@@ -2419,9 +2134,9 @@
       "reason": "售后硬件自检，日常使用无感知"
     },
     "com.miui.cloudbackup": {
-      "name": "云备份调度",
+      "name": "桌面云备份",
       "level": "Safe",
-      "reason": "自动云端备份停止，手动备份可用"
+      "reason": "桌面自动云端备份停止，手动备份可用"
     },
     "com.miui.cloudservice": {
       "name": "小米云核心",
@@ -2433,14 +2148,19 @@
       "level": "Caution",
       "reason": "云后台无法自启，本地文件正常"
     },
+    "com.miui.newmidrive": {
+      "name": "小米云盘",
+      "level": "Safe",
+      "reason": "云盘存储空间无法访问"
+    },
     "com.miui.contentcatcher": {
       "name": "剪贴同步服务",
       "level": "Caution",
       "reason": "跨APP复制粘贴失效，单应用正常"
     },
     "com.miui.contentextension": {
-      "name": "图文扩展",
-      "level": "Caution",
+      "name": "传送门",
+      "level": "Basic",
       "reason": "长截图、文字识别失效，普通截图可用"
     },
     "com.miui.core": {
@@ -2484,9 +2204,9 @@
       "reason": "相册APP本体，媒体底层索引不受影响"
     },
     "com.miui.guardprovider": {
-      "name": "隐私加密存储",
+      "name": "MIUI 安全组件",
       "level": "Caution",
-      "reason": "私密相册无法打开，普通图片正常"
+      "reason": "安装包安全扫描、恶意软件检测失效"
     },
     "com.miui.home": {
       "name": "小米桌面",
@@ -2499,9 +2219,34 @@
       "reason": "小程序快应用无法打开，独立APP正常"
     },
     "com.miui.hybrid.accessory": {
-      "name": "快应用外设适配",
+      "name": "智慧生活",
       "level": "Safe",
-      "reason": "快应用蓝牙NFC失效，普通外设正常"
+      "reason": "智能家居控制入口消失"
+    },
+    "com.xiaomi.smarthome": {
+      "name": "米家",
+      "level": "Safe",
+      "reason": "智能家居控制入口消失"
+    },
+    "com.xiaomi.qr": {
+      "name": "扫一扫",
+      "level": "Safe",
+      "reason": "扫码、识别二维码功能消失"
+    },
+    "com.android.soundrecorder": {
+      "name": "录音机",
+      "level": "Safe",
+      "reason": "停用后通话录音、本地录音功能消失"
+    },
+    "com.miui.screenrecorder": {
+      "name": "屏幕录制",
+      "level": "Safe",
+      "reason": "停用后手机录屏功能消失"
+    },
+    "com.miui.notes": {
+      "name": "便签笔记",
+      "level": "Safe",
+      "reason": "系统自带笔记删除，可第三方替代"
     },
     "com.miui.micloudsync": {
       "name": "云同步调度",
@@ -2511,7 +2256,7 @@
     "com.miui.miservice": {
       "name": "小米基础服务",
       "level": "Caution",
-      "reason": "账号推送总控，推送登录异常"
+      "reason": "停用后账号推送总控，推送登录异常"
     },
     "com.miui.mishare.connectivity": {
       "name": "小米互传",
@@ -2540,8 +2285,8 @@
     },
     "com.miui.notification": {
       "name": "通知核心服务",
-      "level": "Forbidden",
-      "reason": "所有APP通知弹窗失效，无消息提醒"
+      "level": "Caution",
+      "reason": "所有APP通知分组筛选弹窗失效，无消息提醒"
     },
     "com.miui.packageinstaller": {
       "name": "APK安装器",
@@ -2549,9 +2294,9 @@
       "reason": "无法安装卸载任何第三方应用"
     },
     "com.miui.personalassistant": {
-      "name": "小爱同学",
+      "name": "智能助理",
       "level": "Safe",
-      "reason": "语音助手主程序，其他功能不受影响"
+      "reason": "停用后负一屏智能卡片、建议功能消失"
     },
     "com.miui.phrase": {
       "name": "输入法短语",
@@ -2573,15 +2318,20 @@
       "level": "Forbidden",
       "reason": "系统静态资源，停用文字图片大面积丢失"
     },
+	"com.miui.fm": {
+      "name": "收音机",
+      "level": "Safe",
+      "reason": "无法使用调频收音机"
+    },
     "com.miui.screenshot": {
       "name": "小米截图",
       "level": "Safe",
       "reason": "长截图工具失效，第三方截图可用"
     },
     "com.miui.securityadd": {
-      "name": "安全附加功能",
+      "name": "系统服务组件 (游戏空间)",
       "level": "Caution",
-      "reason": "应用锁失效，底层权限管控正常"
+      "reason": "游戏加速、游戏侧边栏消失"
     },
     "com.miui.securitycenter": {
       "name": "安全中心",
@@ -2591,7 +2341,7 @@
     "com.miui.securitycore": {
       "name": "安全底层核心",
       "level": "Forbidden",
-      "reason": "权限病毒防护底层，恶意软件无拦截"
+      "reason": "安全核心组件，停用后应用双开、应用锁、隐私保护等失效"
     },
     "com.miui.securityinputmethod": {
       "name": "安全密码键盘",
@@ -2661,15 +2411,25 @@
     "com.miui.video": {
       "name": "小米视频",
       "level": "Safe",
-      "reason": "视频APP本体，本地视频可第三方播放"
+      "reason": "视频APP本体，停用后相册视频无法播放，可第三方播放"
     },
     "com.miui.voiceassist": {
-      "name": "小爱语音底层",
+      "name": "小爱同学",
       "level": "Caution",
-      "reason": "语音识别合成，息屏唤醒失效"
+      "reason": "语音识别合成，停用后息屏唤醒失效"
+    },
+    "com.xiaomi.mibrain.speech": {
+      "name": "小爱语音引擎",
+      "level": "Caution",
+      "reason": "小爱同学语音引擎组件"
     },
     "com.miui.voicetrigger": {
       "name": "语音唤醒触发",
+      "level": "Caution",
+      "reason": "息屏无法唤醒助手，亮屏手动可用"
+    },
+	"com.miui.voiceassistoverlay": {
+      "name": "语音助手覆盖层",
       "level": "Caution",
       "reason": "息屏无法唤醒助手，亮屏手动可用"
     },
@@ -2680,8 +2440,13 @@
     },
     "com.miui.vsimcore": {
       "name": "虚拟副卡底层",
-      "level": "Caution",
+      "level": "Safe",
       "reason": "虚拟流量副号失效，实体SIM正常"
+    },
+    "com.miui.weather2": {
+      "name": "天气",
+      "level": "Safe",
+      "reason": "系统天气、锁屏天气组件失效"
     },
     "com.miui.wmsvc": {
       "name": "小米推送服务",
@@ -2705,8 +2470,18 @@
     },
     "com.sohu.inputmethod.sogou.xiaomi": {
       "name": "小米搜狗输入法",
-      "level": "Caution",
-      "reason": "默认搜狗失效，可切换其他输入法"
+      "level": "Basic",
+      "reason": "停用后搜狗输入法失效，可切换其他输入法（请至少保留一个输入法,避免无法输入）"
+    },
+    "com.baidu.input_mi": {
+      "name": "小米百度输入法",
+      "level": "Basic",
+      "reason": "停用后百度输入法失效，可切换其他输入法（请至少保留一个输入法,避免无法输入）"
+    },
+    "com.iflytek.inputmethod.miui": {
+      "name": "小米讯飞输入法",
+      "level": "Basic",
+      "reason": "停用后讯飞输入法失效，可切换其他输入法（请至少保留一个输入法,避免无法输入）"
     },
     "com.tencent.soter.soterserver": {
       "name": "腾讯安全认证",
@@ -2724,14 +2499,19 @@
       "reason": "小众网站证书校验异常，主流网页正常"
     },
     "com.xiaomi.ab": {
-      "name": "灰度测试组件",
+      "name": "小米商城系统组件",
       "level": "Safe",
-      "reason": "新功能内测后台，整机功能正常"
+      "reason": "商城推荐、内置广告推送源"
+    },
+	"com.xiaomi.aireco": {
+      "name": "AI 推荐服务",
+      "level": "Safe",
+      "reason": "个性化内容推荐广告"
     },
     "com.xiaomi.account": {
       "name": "小米账号服务",
       "level": "Caution",
-      "reason": "自动登录失效，手动输密码可登录"
+      "reason": "停用后退出小米账号，云、查找设备、会员全部失效"
     },
     "com.xiaomi.aiasst.service": {
       "name": "小爱后台服务",
@@ -2768,6 +2548,11 @@
       "level": "Caution",
       "reason": "远程锁定、响铃功能失效"
     },
+    "com.xiaomi.gamecenter": {
+      "name": "游戏中心",
+      "level": "Safe",
+      "reason": "小米游戏中心失效，第三方游戏正常运行"
+    },
     "com.xiaomi.gamecenter.sdk.service": {
       "name": "游戏中心SDK",
       "level": "Safe",
@@ -2794,9 +2579,14 @@
       "reason": "地点智能推荐失效，地图定位正常"
     },
     "com.xiaomi.mi_connect_service": {
-      "name": "多设备互联",
-      "level": "Caution",
-      "reason": "手机电脑剪贴、文件同步失效"
+      "name": "小米互联通信服务",
+      "level": "Safe",
+      "reason": "停用小米免费短信、MIUI 互通消息失效"
+    },
+    "vendor.qti.imsrcs": {
+      "name": "小米 Rcs 增强短信",
+      "level": "Safe",
+      "reason": "运营商高清短信、图片短信失效"
     },
     "com.xiaomi.micloud.sdk": {
       "name": "云SDK组件",
@@ -2830,7 +2620,7 @@
     },
     "com.xiaomi.simactivate.service": {
       "name": "SIM激活服务",
-      "level": "Caution",
+      "level": "Safe",
       "reason": "新机SIM自动激活失效，手动激活可用"
     },
     "com.xiaomi.upnp": {
