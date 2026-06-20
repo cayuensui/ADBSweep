@@ -1,0 +1,1706 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-20",
+  "description": "ADBSweep 包名数据库 — 用于热更新",
+  "packages": {
+    "android": {
+      "name": "安卓系统根进程",
+      "level": "Forbidden",
+      "reason": "系统最底层的根进程，停用后手机将立即黑屏、无限重启或彻底死机"
+    },
+    "android.ext.services": {
+      "name": "安卓扩展服务进程",
+      "level": "Forbidden",
+      "reason": "系统扩展服务的宿主进程，停用将导致大量系统功能崩溃"
+    },
+    "android.ext.shared": {
+      "name": "安卓扩展共享库",
+      "level": "Forbidden",
+      "reason": "系统共享运行库，被多数应用和系统组件依赖，停用会导致大面积崩溃"
+    },
+    "androidhwext": {
+      "name": "华为安卓扩展底层",
+      "level": "Forbidden",
+      "reason": "华为设备底层扩展框架，停用将导致华为特有功能全部失效"
+    },
+    "com.android.bluetooth": {
+      "name": "原生蓝牙服务",
+      "level": "Forbidden",
+      "reason": "蓝牙功能的核心系统服务，停用后蓝牙完全不可用"
+    },
+    "com.android.externalstorage": {
+      "name": "外部存储管理",
+      "level": "Forbidden",
+      "reason": "管理SD卡和外部存储的系统服务，停用后无法访问外部存储"
+    },
+    "com.android.keychain": {
+      "name": "密钥链服务",
+      "level": "Forbidden",
+      "reason": "系统密钥/证书管理服务，停用后Wi-Fi密码、VPN证书等将失效"
+    },
+    "com.android.location.fused": {
+      "name": "融合定位服务",
+      "level": "Forbidden",
+      "reason": "多传感器融合定位核心服务，停用后所有APP定位功能均不可用"
+    },
+    "com.android.networkstack.inprocess": {
+      "name": "网络栈内置进程",
+      "level": "Forbidden",
+      "reason": "系统网络协议栈核心进程，停用后Wi-Fi和移动数据网络将瘫痪"
+    },
+    "com.android.networkstack.tethering.inprocess": {
+      "name": "热点内置网络进程",
+      "level": "Forbidden",
+      "reason": "移动热点功能依赖的底层网络进程，停用后无法开启热点"
+    },
+    "com.android.nfc": {
+      "name": "NFC服务",
+      "level": "Forbidden",
+      "reason": "NFC功能核心服务，停用后NFC刷卡/支付/门禁等功能全部失效"
+    },
+    "com.android.permissioncontroller": {
+      "name": "权限控制器",
+      "level": "Forbidden",
+      "reason": "APP权限管理核心服务，停用后所有应用权限无法管理，系统安全性崩溃"
+    },
+    "com.android.providers.media": {
+      "name": "媒体存储服务",
+      "level": "Forbidden",
+      "reason": "系统媒体文件索引数据库，停用后图库/音乐/文件管理无法显示文件"
+    },
+    "com.android.providers.telephony": {
+      "name": "通话短信存储服务",
+      "level": "Forbidden",
+      "reason": "通话记录和短信内容的核心存储服务，停用后通讯功能异常"
+    },
+    "com.android.providers.settings": {
+      "name": "系统设置存储",
+      "level": "Forbidden",
+      "reason": "系统设置数据存储服务，停用后所有设置项无法读取，系统行为混乱"
+    },
+    "com.android.se": {
+      "name": "安全元件服务",
+      "level": "Forbidden",
+      "reason": "硬件安全芯片（Secure Element）管理服务，停用后NFC安全支付不可用"
+    },
+    "com.android.server.telecom": {
+      "name": "电信服务服务端",
+      "level": "Forbidden",
+      "reason": "通话功能底层服务器，停用后将完全无法拨打和接听电话"
+    },
+    "com.android.settings": {
+      "name": "设置",
+      "level": "Forbidden",
+      "reason": "系统设置应用的核心入口，停用后将无法进入设置界面"
+    },
+    "com.android.systemui": {
+      "name": "系统UI",
+      "level": "Forbidden",
+      "reason": "状态栏/导航栏/通知/锁屏界面的核心服务，停用后手机界面完全瘫痪"
+    },
+    "com.android.packageinstaller": {
+      "name": "应用安装程序",
+      "level": "Forbidden",
+      "reason": "APP安装/卸载的核心服务，停用后将无法安装或更新任何应用"
+    },
+    "com.hisi.mapcon": {
+      "name": "海思数据连接管理",
+      "level": "Forbidden",
+      "reason": "海思芯片基带数据连接管理，停用后移动网络和通信均不可用"
+    },
+    "com.huawei.android.hsf": {
+      "name": "华为系统框架服务",
+      "level": "Forbidden",
+      "reason": "华为系统底层框架服务，承载大量核心系统组件"
+    },
+    "com.huawei.android.launcher": {
+      "name": "华为桌面（主屏幕）",
+      "level": "Forbidden",
+      "reason": "手机主屏幕/桌面启动器，停用后将无法进入桌面"
+    },
+    "com.huawei.android.pushagent": {
+      "name": "推送服务代理",
+      "level": "Forbidden",
+      "reason": "APP消息推送的底层代理服务，停用后所有APP无法收到推送通知"
+    },
+    "com.huawei.def": {
+      "name": "设备加密框架",
+      "level": "Forbidden",
+      "reason": "设备全盘加密框架，停用可能导致数据丢失或无法启动"
+    },
+    "com.huawei.harmonyos.foundation": {
+      "name": "鸿蒙基础框架",
+      "level": "Forbidden",
+      "reason": "鸿蒙OS最底层基础框架，停用将使手机彻底无法正常运行"
+    },
+    "com.huawei.hiai": {
+      "name": "华为智慧引擎",
+      "level": "Forbidden",
+      "reason": "AI智慧引擎底层服务，被系统拍照/语音/推荐等数十个功能依赖"
+    },
+    "com.huawei.hwid": {
+      "name": "华为移动服务（HMS Core）",
+      "level": "Forbidden",
+      "reason": "华为移动服务核心（HMS），所有华为应用和生态功能的基础框架"
+    },
+    "com.huawei.ims": {
+      "name": "高清通话（VoLTE/VoNR）",
+      "level": "Forbidden",
+      "reason": "VoLTE/VoNR高清通话服务，停用后无法使用4G/5G高清通话"
+    },
+    "com.huawei.ohos.hiwindow": {
+      "name": "鸿蒙窗口管理服务",
+      "level": "Forbidden",
+      "reason": "窗口管理的底层服务，停用后多任务/分屏/悬浮窗全部失效"
+    },
+    "com.huawei.powergenie": {
+      "name": "电源智能引擎",
+      "level": "Forbidden",
+      "reason": "系统电源管理核心引擎，停用后手机续航严重下降且可能发热异常"
+    },
+    "com.huawei.systemserver": {
+      "name": "系统服务主进程",
+      "level": "Forbidden",
+      "reason": "所有系统服务的总调度进程，停用将导致大面积系统服务崩溃"
+    },
+    "com.huawei.trustcircle": {
+      "name": "可信安全环服务",
+      "level": "Forbidden",
+      "reason": "多设备可信安全认证服务，停用后跨设备互信/多屏协同等均不可用"
+    },
+    "com.huawei.security.hsdr": {
+      "name": "HSDR安全服务",
+      "level": "Caution",
+      "reason": "华为安全检测与响应服务，停用后系统安全防护能力将降低"
+    },
+    "com.huawei.securitymgr": {
+      "name": "安全管理中心",
+      "level": "Caution",
+      "reason": "系统安全策略管理中心，停用后部分安全功能可能失效"
+    },
+    "com.huawei.securityserver": {
+      "name": "安全服务端",
+      "level": "Caution",
+      "reason": "安全功能服务端，被密码管理/指纹/人脸等安全功能依赖"
+    },
+    "com.huawei.securitypluginbase": {
+      "name": "安全插件基础库",
+      "level": "Caution",
+      "reason": "安全功能插件的公共基础库，停用后安全插件不可用"
+    },
+    "com.huawei.secime": {
+      "name": "安全输入法",
+      "level": "Caution",
+      "reason": "支付/密码场景下调用的安全键盘，停用后敏感输入场景不安全"
+    },
+    "com.huawei.trustagent": {
+      "name": "可信认证代理服务",
+      "level": "Caution",
+      "reason": "系统可信认证的代理层，停用后指纹/人脸解锁可能出现异常"
+    },
+    "com.huawei.trustspace": {
+      "name": "可信空间安全服务",
+      "level": "Caution",
+      "reason": "可信执行环境管理服务，停用后指纹/人脸等生物认证均不可用"
+    },
+    "com.huawei.trustedthingsauth": {
+      "name": "可信设备认证服务",
+      "level": "Caution",
+      "reason": "IoT可信设备认证服务，停用后无法添加新的可信物联网设备"
+    },
+    "com.huawei.behaviorauth": {
+      "name": "行为认证服务",
+      "level": "Caution",
+      "reason": "用户行为模式认证服务，辅助生物识别判断"
+    },
+    "com.huawei.coauthservice": {
+      "name": "协同认证服务",
+      "level": "Caution",
+      "reason": "多设备协同认证服务，停用后跨设备解锁/认证不可用"
+    },
+    "com.huawei.deviceauth": {
+      "name": "设备身份认证服务",
+      "level": "Caution",
+      "reason": "设备唯一身份证书管理服务，停用后多设备协同功能异常"
+    },
+    "com.huawei.fido.uafclient": {
+      "name": "FIDO生物认证客户端",
+      "level": "Caution",
+      "reason": "FIDO协议生物认证客户端，部分APP免密登录将失效"
+    },
+    "com.huawei.ca": {
+      "name": "证书授权服务",
+      "level": "Caution",
+      "reason": "系统证书授权管理服务，停用后企业VPN/Wi-Fi证书认证不可用"
+    },
+    "com.huawei.distributed.kms": {
+      "name": "分布式密钥管理服务",
+      "level": "Caution",
+      "reason": "跨设备密钥同步服务，停用后多设备间密钥无法同步"
+    },
+    "com.android.certinstaller": {
+      "name": "证书安装器",
+      "level": "Caution",
+      "reason": "系统证书安装服务，停用后企业邮箱/VPN等证书无法安装"
+    },
+    "com.huawei.numberidentity": {
+      "name": "号码识别服务",
+      "level": "Caution",
+      "reason": "来电/短信号码识别和骚扰拦截的底层服务"
+    },
+    "com.huawei.airlink": {
+      "name": "星闪/空中互联服务",
+      "level": "Caution",
+      "reason": "华为星闪近距离无线连接协议，停用后星闪设备无法连接"
+    },
+    "com.huawei.bluetooth": {
+      "name": "华为蓝牙增强服务",
+      "level": "Caution",
+      "reason": "蓝牙功能增强组件，停用后蓝牙耳机/手表等可能连接不稳定"
+    },
+    "com.huawei.sle": {
+      "name": "星闪SLE服务",
+      "level": "Caution",
+      "reason": "星闪低功耗协议服务，停用后星闪低功耗设备无法连接"
+    },
+    "com.huawei.wifiprobqeservice": {
+      "name": "Wi-Fi探测服务",
+      "level": "Caution",
+      "reason": "Wi-Fi信号质量探测服务，停用后Wi-Fi自动切换/信号优化失效"
+    },
+    "com.huawei.dsdscardmanager": {
+      "name": "双SIM卡管理服务",
+      "level": "Caution",
+      "reason": "双卡管理核心服务，停用后双卡功能（副卡通话/数据切换）不可用"
+    },
+    "com.huawei.hms5gkit.agentservice": {
+      "name": "HMS 5G代理服务",
+      "level": "Caution",
+      "reason": "5G网络能力代理服务，停用后部分APP的5G优化功能不可用"
+    },
+    "com.huawei.waudio": {
+      "name": "无线音频服务",
+      "level": "Caution",
+      "reason": "蓝牙/无线音频传输优化服务，停用后蓝牙耳机音质可能下降"
+    },
+    "com.huawei.audioaccessorymanager": {
+      "name": "音频配件管理服务",
+      "level": "Caution",
+      "reason": "音频外设（USB/蓝牙耳机音箱）管理服务"
+    },
+    "com.huawei.nemo": {
+      "name": "网络监测服务",
+      "level": "Caution",
+      "reason": "网络连通性监测服务，停用后无法自动检测Wi-Fi登陆页面"
+    },
+    "com.huawei.remotepassword": {
+      "name": "远程密码服务",
+      "level": "Caution",
+      "reason": "远程设备密码管理，停用后通过手表/平板解锁手机等场景不可用"
+    },
+    "com.huawei.rcsserviceapplication": {
+      "name": "RCS增强短信服务",
+      "level": "Caution",
+      "reason": "5G消息（RCS）底层服务，停用后RCS/增强短信功能不可用"
+    },
+    "com.huawei.hwvoipservice": {
+      "name": "网络通话服务",
+      "level": "Caution",
+      "reason": "VoLTE/VoWiFi网络通话优化服务，停用后高清通话可能降级"
+    },
+    "com.android.bluetoothmidiservice": {
+      "name": "蓝牙MIDI音频服务",
+      "level": "Caution",
+      "reason": "蓝牙MIDI协议音频服务，停用后蓝牙电子乐器等专业设备不可用"
+    },
+    "com.android.cellbroadcastreceiver": {
+      "name": "小区广播接收器",
+      "level": "Caution",
+      "reason": "紧急警报/地震预警等小区广播接收服务，停用后将错过紧急广播"
+    },
+    "com.android.cellbroadcastservice": {
+      "name": "小区广播服务",
+      "level": "Caution",
+      "reason": "小区广播后台服务，同上，涉及紧急预警推送"
+    },
+    "com.android.mms.service": {
+      "name": "彩信服务",
+      "level": "Caution",
+      "reason": "MMS彩信收发底层服务，停用后无法发送/接收彩信"
+    },
+    "com.android.networkstack.permissionconfig": {
+      "name": "网络权限配置服务",
+      "level": "Caution",
+      "reason": "网络连接权限配置服务，停用后部分APP联网权限可能异常"
+    },
+    "com.android.ons": {
+      "name": "运营商通知服务",
+      "level": "Caution",
+      "reason": "运营商网络通知服务，停用后无法接收运营商网络状态通知"
+    },
+    "com.android.carrierconfig": {
+      "name": "运营商配置服务",
+      "level": "Caution",
+      "reason": "运营商网络参数自动配置服务，换SIM卡后可能无法自动更新网络配置"
+    },
+    "com.android.connectivity.resources": {
+      "name": "网络连接资源包",
+      "level": "Caution",
+      "reason": "网络连接图标/状态文本等界面资源包"
+    },
+    "com.android.wifi.resources": {
+      "name": "Wi-Fi资源包",
+      "level": "Caution",
+      "reason": "Wi-Fi功能界面资源包，停用后Wi-Fi相关UI可能显示异常"
+    },
+    "com.android.captiveportallogin": {
+      "name": "公共Wi-Fi认证登录",
+      "level": "Caution",
+      "reason": "公共Wi-Fi Portal认证登录服务，停用后机场/酒店Wi-Fi无法弹出登录页"
+    },
+    "com.android.hotspot2.osulogin": {
+      "name": "热点2.0登录页",
+      "level": "Caution",
+      "reason": "Passpoint/Hotspot2.0安全热点自动登录服务"
+    },
+    "com.android.proxyhandler": {
+      "name": "网络代理处理服务",
+      "level": "Caution",
+      "reason": "系统HTTP代理处理服务，停用后部分网络环境代理可能失效"
+    },
+    "com.android.pacprocessor": {
+      "name": "代理配置解析服务",
+      "level": "Caution",
+      "reason": "PAC代理自动配置脚本解析服务"
+    },
+    "com.android.statementservice": {
+      "name": "账号声明同步服务",
+      "level": "Caution",
+      "reason": "跨APP账号身份声明同步服务，Google/三星等生态账号同步"
+    },
+    "com.android.uwb": {
+      "name": "UWB超宽带服务",
+      "level": "Caution",
+      "reason": "UWB超宽带定位通信服务，停用后UWB精确定位/文件传输不可用"
+    },
+    "com.huawei.multimedia.audioengine": {
+      "name": "多媒体音频引擎",
+      "level": "Caution",
+      "reason": "系统音频处理核心引擎，停用后外放/通话/录音等音频功能异常"
+    },
+    "com.huawei.multimedia.hivideoplayengine": {
+      "name": "视频播放引擎",
+      "level": "Caution",
+      "reason": "视频硬解播放引擎，停用后视频播放将回退到软解（卡顿/发热）"
+    },
+    "com.huawei.imedia.sws": {
+      "name": "多媒体流媒体服务",
+      "level": "Caution",
+      "reason": "流媒体编解码服务，停用后在线视频可能卡顿或无法播放"
+    },
+    "com.huawei.mediaenhance": {
+      "name": "媒体画质增强服务",
+      "level": "Caution",
+      "reason": "视频/图片画质AI增强服务，停用后视频播放画质下降"
+    },
+    "com.huawei.mediacontroller": {
+      "name": "媒体控制器服务",
+      "level": "Caution",
+      "reason": "通知栏/锁屏媒体播放控制条的服务端"
+    },
+    "com.huawei.camerakit.impl": {
+      "name": "相机能力套件实现服务",
+      "level": "Caution",
+      "reason": "相机高级功能（夜景/人像/专业模式）底层实现服务"
+    },
+    "com.huawei.hwpreview": {
+      "name": "相机预览底层服务",
+      "level": "Caution",
+      "reason": "相机取景预览的核心渲染服务，停用后相机预览黑屏"
+    },
+    "com.huawei.smartshot": {
+      "name": "智慧截图服务",
+      "level": "Caution",
+      "reason": "指关节截屏/滚动截屏/长截图等智慧截图功能的服务端"
+    },
+    "com.huawei.synergy": {
+      "name": "多设备协同基础服务",
+      "level": "Caution",
+      "reason": "多设备协同的底层通信服务，停用后多屏协同等跨设备功能全部失效"
+    },
+    "com.huawei.ohos.collaborationcenter": {
+      "name": "鸿蒙协同中心",
+      "level": "Caution",
+      "reason": "鸿蒙万能卡片和跨设备流转的协同管理中心"
+    },
+    "com.huawei.iconnect": {
+      "name": "智能互联服务",
+      "level": "Caution",
+      "reason": "华为智能互联底层服务，停用后多设备互联功能不可用"
+    },
+    "com.huawei.iconnect.ui": {
+      "name": "智能互联界面",
+      "level": "Caution",
+      "reason": "智能互联的界面组件，如上"
+    },
+    "com.huawei.msdp": {
+      "name": "多设备服务平台",
+      "level": "Caution",
+      "reason": "多设备传感器数据融合平台，停用后跨设备感知功能失效"
+    },
+    "com.huawei.dmsdp": {
+      "name": "分布式媒体服务平台",
+      "level": "Caution",
+      "reason": "分布式音频/视频流转的服务端，停用后音频流转功能不可用"
+    },
+    "com.huawei.gateway": {
+      "name": "分布式网关服务",
+      "level": "Caution",
+      "reason": "分布式设备间网络通信网关"
+    },
+    "com.huawei.distributedpasteboard": {
+      "name": "分布式剪贴板",
+      "level": "Caution",
+      "reason": "跨设备剪贴板同步服务，停用后无法在手机和PC间共享剪贴板"
+    },
+    "com.huawei.devicegroupmanage": {
+      "name": "设备组管理服务",
+      "level": "Caution",
+      "reason": "多设备协同组网管理，停用后多设备无法组成协同组"
+    },
+    "com.huawei.onehopsvchost": {
+      "name": "单跳设备连接宿主服务",
+      "level": "Caution",
+      "reason": "一碰传/一碰连功能的宿主服务"
+    },
+    "com.huawei.hilink.framework": {
+      "name": "智联基础框架",
+      "level": "Caution",
+      "reason": "HiLink智联生态基础框架，停用后华为IoT设备无法连接"
+    },
+    "com.huawei.iaware": {
+      "name": "智慧感知引擎",
+      "level": "Caution",
+      "reason": "AI情景感知引擎，负责智能提醒/场景切换等系统级智能功能"
+    },
+    "com.huawei.pengine": {
+      "name": "华为智能建议服务",
+      "level": "Caution",
+      "reason": "系统级智能建议引擎，被负一屏/全局搜索/情景推荐等功能依赖"
+    },
+    "com.huawei.arengine.service": {
+      "name": "AR引擎服务",
+      "level": "Caution",
+      "reason": "AR增强现实引擎，停用后AR测量/AR导航/AR游戏等不可用"
+    },
+    "com.huawei.webview": {
+      "name": "华为内置网页内核",
+      "level": "Caution",
+      "reason": "系统WebView内核，大量APP内嵌网页依赖此组件显示"
+    },
+    "com.huawei.hwasm": {
+      "name": "鸿蒙WASM运行容器",
+      "level": "Caution",
+      "reason": "鸿蒙WebAssembly运行环境，停用后部分鸿蒙应用/小程序不可用"
+    },
+    "com.huawei.motionservice": {
+      "name": "悬浮球",
+      "level": "Safe",
+      "reason": "悬浮导航球和隔空手势控制应用，独立功能可安全停用"
+    },
+    "com.huawei.contentsensor": {
+      "name": "取词服务",
+      "level": "Caution",
+      "reason": "屏幕文字智能识别和取词服务，被智慧识屏/智能搜索等功能的文本提取依赖"
+    },
+    "com.huawei.nb.service": {
+      "name": "自然语言处理服务",
+      "level": "Caution",
+      "reason": "NLP自然语言处理引擎，停用后AI助手语义理解能力下降"
+    },
+    "com.huawei.hiaction": {
+      "name": "AI动作服务",
+      "level": "Caution",
+      "reason": "AI动作自动化执行服务，停用后智慧场景自动化功能失效"
+    },
+    "com.huawei.suggestion": {
+      "name": "智能推荐服务EMUI版",
+      "level": "Caution",
+      "reason": "系统级内容推荐引擎，被负一屏/全局搜索等依赖"
+    },
+    "com.huawei.ohos.suggestion": {
+      "name": "智慧建议",
+      "level": "Caution",
+      "reason": "鸿蒙版系统级智慧建议引擎，负一屏/情景推荐等服务依赖此组件"
+    },
+    "com.huawei.recsys": {
+      "name": "内容推荐服务",
+      "level": "Caution",
+      "reason": "推荐系统公共组件"
+    },
+    "com.huawei.hiview": {
+      "name": "系统日志采集服务",
+      "level": "Caution",
+      "reason": "系统崩溃/异常日志采集服务，停用后故障诊断能力下降"
+    },
+    "com.huawei.hiviewtunnel": {
+      "name": "日志传输通道服务",
+      "level": "Caution",
+      "reason": "日志远程传输服务，同上"
+    },
+    "com.huawei.hwddmp": {
+      "name": "设备数据管理平台服务",
+      "level": "Caution",
+      "reason": "设备数据管理平台，涉及系统诊断数据"
+    },
+    "com.huawei.hwdiagnosis": {
+      "name": "硬件诊断服务",
+      "level": "Caution",
+      "reason": "硬件故障自动诊断服务，售后维修依赖此服务"
+    },
+    "com.huawei.hbm": {
+      "name": "电池管理服务",
+      "level": "Caution",
+      "reason": "电池健康管理和充放电策略服务，停用后电池寿命可能加速衰减"
+    },
+    "com.huawei.lbs": {
+      "name": "位置基础服务",
+      "level": "Caution",
+      "reason": "系统级定位基础服务，被所有地图/导航/打车APP依赖"
+    },
+    "com.huawei.assetsync": {
+      "name": "资源同步服务",
+      "level": "Caution",
+      "reason": "系统资源文件同步服务，被主题/壁纸等功能依赖"
+    },
+    "com.huawei.assetsyncservice": {
+      "name": "资源同步后台服务",
+      "level": "Caution",
+      "reason": "资源同步的后台服务线程，如上"
+    },
+    "com.huawei.languagedownloader": {
+      "name": "语言包下载服务",
+      "level": "Caution",
+      "reason": "系统语言包下载管理，停用后无法添加新语言"
+    },
+    "com.huawei.printservice": {
+      "name": "打印服务",
+      "level": "Caution",
+      "reason": "系统打印服务，停用后将无法使用打印功能"
+    },
+    "com.huawei.game.kitserver": {
+      "name": "游戏套件服务",
+      "level": "Caution",
+      "reason": "游戏加速/免打扰/游戏空间等游戏功能的服务端"
+    },
+    "com.huawei.android.hwaps": {
+      "name": "应用权限调度服务",
+      "level": "Caution",
+      "reason": "应用权限分配和调度服务，停用后应用权限管理可能混乱"
+    },
+    "com.huawei.android.remotecontroller": {
+      "name": "远程控制服务",
+      "level": "Caution",
+      "reason": "远程协助/远程控制功能的服务端"
+    },
+    "com.huawei.featurelayer.featureframework": {
+      "name": "特性分层框架服务",
+      "level": "Caution",
+      "reason": "系统特性分层框架，被多版本兼容特性依赖"
+    },
+    "com.huawei.featurelayer.sharedfeature.map": {
+      "name": "地图共享特性服务",
+      "level": "Caution",
+      "reason": "地图能力的公共特性层"
+    },
+    "com.huawei.featurelayer.sharedfeature.stylus": {
+      "name": "手写笔共享特性服务",
+      "level": "Caution",
+      "reason": "手写笔/M-Pencil的公共特性层"
+    },
+    "com.huawei.ohos.systemmanager": {
+      "name": "鸿蒙系统管理服务",
+      "level": "Caution",
+      "reason": "鸿蒙系统层面的管理服务"
+    },
+    "com.huawei.devicemanager": {
+      "name": "设备管理服务",
+      "level": "Caution",
+      "reason": "设备管理策略服务，企业MDM设备管理可能依赖此服务"
+    },
+    "com.huawei.profile": {
+      "name": "用户配置文件服务",
+      "level": "Caution",
+      "reason": "多用户/隐私空间的配置文件管理服务"
+    },
+    "com.huawei.hff": {
+      "name": "文件过滤框架",
+      "level": "Caution",
+      "reason": "文件访问权限过滤框架"
+    },
+    "com.huawei.hwquickaccessmenu": {
+      "name": "快捷开关菜单服务",
+      "level": "Caution",
+      "reason": "下拉控制中心快捷开关的服务端，停用后快捷开关不可用"
+    },
+    "com.huawei.magazine": {
+      "name": "杂志锁屏",
+      "level": "Caution",
+      "reason": "杂志锁屏图片轮播服务，与锁屏界面深度集成"
+    },
+    "com.huawei.searchservice": {
+      "name": "搜索服务",
+      "level": "Caution",
+      "reason": "桌面下拉全局搜索的后台服务端"
+    },
+    "com.huawei.hwbluetoothpencilmanager": {
+      "name": "蓝牙手写笔管理服务",
+      "level": "Caution",
+      "reason": "M-Pencil手写笔连接和管理的服务端"
+    },
+    "com.huawei.contacts.sync": {
+      "name": "联系人同步服务",
+      "level": "Caution",
+      "reason": "联系人跨设备/跨账号同步服务"
+    },
+    "com.huawei.regservice": {
+      "name": "设备注册服务",
+      "level": "Caution",
+      "reason": "设备首次激活和云端注册服务"
+    },
+    "com.android.providers.downloads": {
+      "name": "下载存储服务",
+      "level": "Caution",
+      "reason": "系统下载管理器核心数据库，停用后下载功能不可用"
+    },
+    "com.android.providers.downloads.ui": {
+      "name": "下载管理UI",
+      "level": "Caution",
+      "reason": "下载管理的用户界面组件"
+    },
+    "com.android.providers.calendar": {
+      "name": "日历数据存储",
+      "level": "Caution",
+      "reason": "日历事件数据存储服务，停用后日历数据丢失且无法同步"
+    },
+    "com.android.providers.contacts": {
+      "name": "联系人存储服务",
+      "level": "Caution",
+      "reason": "联系人数据库核心存储，停用后联系人信息将不可用"
+    },
+    "com.android.providers.blockednumber": {
+      "name": "黑名单存储服务",
+      "level": "Caution",
+      "reason": "骚扰拦截/黑名单数据存储，停用后黑名单功能失效"
+    },
+    "com.android.providers.userdictionary": {
+      "name": "用户词典存储",
+      "level": "Caution",
+      "reason": "用户自定义输入词典存储服务"
+    },
+    "com.android.providers.media.module": {
+      "name": "媒体模块存储扩展",
+      "level": "Caution",
+      "reason": "媒体数据库扩展模块"
+    },
+    "com.android.mtp": {
+      "name": "MTP媒体传输服务",
+      "level": "Caution",
+      "reason": "USB连接PC的文件传输（MTP）服务，停用后手机连电脑无法传文件"
+    },
+    "com.android.backupconfirm": {
+      "name": "备份确认工具",
+      "level": "Caution",
+      "reason": "系统备份确认流程组件"
+    },
+    "com.android.sharedstoragebackup": {
+      "name": "共享存储备份服务",
+      "level": "Caution",
+      "reason": "共享存储数据的备份服务"
+    },
+    "com.android.calllogbackup": {
+      "name": "通话记录备份服务",
+      "level": "Caution",
+      "reason": "通话记录备份服务"
+    },
+    "com.android.wallpaperbackup": {
+      "name": "壁纸备份服务",
+      "level": "Caution",
+      "reason": "壁纸设置备份服务"
+    },
+    "com.android.storagemanager": {
+      "name": "存储管理",
+      "level": "Caution",
+      "reason": "存储空间清理/管理的系统服务"
+    },
+    "com.android.vpndialogs": {
+      "name": "VPN弹窗界面",
+      "level": "Caution",
+      "reason": "VPN连接确认对话框组件"
+    },
+    "com.android.managedprovisioning": {
+      "name": "工作资料设置",
+      "level": "Caution",
+      "reason": "企业工作资料/设备管理的配置服务，停用后工作模式的设置功能不可用"
+    },
+    "com.android.inputdevices": {
+      "name": "输入设备管理",
+      "level": "Caution",
+      "reason": "外接键盘/鼠标/手柄等输入设备管理服务"
+    },
+    "com.android.modulemetadata": {
+      "name": "模块元数据服务",
+      "level": "Caution",
+      "reason": "系统模块元数据管理"
+    },
+    "com.android.localtransport": {
+      "name": "本地传输服务",
+      "level": "Caution",
+      "reason": "系统内进程间本地数据传输服务"
+    },
+    "com.android.printservice.recommendation": {
+      "name": "打印服务推荐",
+      "level": "Caution",
+      "reason": "向用户推荐打印插件的服务"
+    },
+    "com.android.cts.priv.ctsshim": {
+      "name": "CTS私有兼容层",
+      "level": "Caution",
+      "reason": "Android兼容性测试套件私有兼容层"
+    },
+    "com.android.cts.ctsshim": {
+      "name": "CTS兼容层",
+      "level": "Caution",
+      "reason": "Android兼容性测试套件兼容层"
+    },
+    "com.huawei.mdm.overlay": {
+      "name": "设备管理覆盖层",
+      "level": "Caution",
+      "reason": "企业MDM设备管理的资源覆盖层"
+    },
+    "com.huawei.hiai.overlay": {
+      "name": "智慧AI覆盖层",
+      "level": "Caution",
+      "reason": "智慧引擎AI的资源覆盖层"
+    },
+    "com.huawei.hiaction.overlay": {
+      "name": "AI动作服务覆盖层",
+      "level": "Caution",
+      "reason": "AI动作服务的资源覆盖层"
+    },
+    "com.android.systemui.overlay": {
+      "name": "系统UI覆盖层",
+      "level": "Caution",
+      "reason": "系统UI的资源覆盖层"
+    },
+    "com.android.frameworkres.overlay": {
+      "name": "安卓框架资源覆盖层",
+      "level": "Caution",
+      "reason": "Android框架资源的覆盖层"
+    },
+    "com.huawei.hms.dupdateengine": {
+      "name": "HMS更新引擎",
+      "level": "Caution",
+      "reason": "华为移动服务HMS的更新引擎，HMS组件升级依赖此服务"
+    },
+    "com.huawei.easygo": {
+      "name": "天际通基础服务",
+      "level": "Caution",
+      "reason": "天际通全球上网功能的基础服务"
+    },
+    "com.huawei.wallet.sdk.walletsdk": {
+      "name": "钱包SDK底层",
+      "level": "Caution",
+      "reason": "华为钱包的SDK底层库，被支付/门禁卡等功能依赖"
+    },
+    "com.android.phone": {
+      "name": "电话",
+      "level": "Basic",
+      "reason": "手机拨号功能应用，停用后无法拨打电话（但可接收紧急呼叫）"
+    },
+    "com.android.incallui": {
+      "name": "通话界面",
+      "level": "Basic",
+      "reason": "通话中的界面（接听/挂断/数字键盘），停用后通话时无操作界面"
+    },
+    "com.android.mms": {
+      "name": "信息（短信彩信）",
+      "level": "Basic",
+      "reason": "系统短信/彩信收发应用，停用后无法收发普通短信"
+    },
+    "com.huawei.ohos.mms": {
+      "name": "鸿蒙信息",
+      "level": "Basic",
+      "reason": "鸿蒙版短信应用，同上"
+    },
+    "com.android.emergency": {
+      "name": "紧急求助",
+      "level": "Basic",
+      "reason": "紧急呼叫/SOS求助功能，涉及人身安全场景"
+    },
+    "com.android.stk": {
+      "name": "SIM卡工具包",
+      "level": "Basic",
+      "reason": "SIM卡运营商内置菜单工具，部分银行/支付功能依赖此服务"
+    },
+    "com.android.simappdialog": {
+      "name": "SIM卡应用弹窗",
+      "level": "Basic",
+      "reason": "SIM卡应用的弹窗界面组件"
+    },
+    "com.huawei.phone.recorder": {
+      "name": "通话录音服务",
+      "level": "Basic",
+      "reason": "通话录音功能的服务端"
+    },
+    "com.huawei.contacts": {
+      "name": "联系人",
+      "level": "Basic",
+      "reason": "系统通讯录/联系人管理应用"
+    },
+    "com.huawei.calendar": {
+      "name": "日历",
+      "level": "Basic",
+      "reason": "系统日历应用，停用后日历提醒和日程管理功能不可用"
+    },
+    "com.huawei.deskclock": {
+      "name": "时钟",
+      "level": "Basic",
+      "reason": "系统闹钟/时钟/计时器应用，停用后闹钟不可用"
+    },
+    "com.huawei.camera": {
+      "name": "相机",
+      "level": "Basic",
+      "reason": "系统相机应用，停用后系统自带相机不可用（第三方相机仍可用）"
+    },
+    "com.huawei.ohos.camera": {
+      "name": "鸿蒙相机",
+      "level": "Basic",
+      "reason": "鸿蒙版相机应用，同上"
+    },
+    "com.huawei.ohos.inputmethod": {
+      "name": "鸿蒙输入法",
+      "level": "Basic",
+      "reason": "鸿蒙系统默认输入法，停用前请确保已安装其他输入法"
+    },
+    "ohos.media.medialibrary": {
+      "name": "鸿蒙媒体库",
+      "level": "Basic",
+      "reason": "鸿蒙原生媒体库接口，超级中转站/图库智能分类/系统级文件分享等鸿蒙新特性均依赖此组件"
+    },
+    "com.huawei.browser": {
+      "name": "华为浏览器",
+      "level": "Safe",
+      "reason": "独立浏览器应用，不依赖系统核心服务，可安全停用"
+    },
+    "com.huawei.browser.fa": {
+      "name": "浏览器快应用组件",
+      "level": "Safe",
+      "reason": "浏览器快应用运行组件，停用不影响浏览器基础功能"
+    },
+    "com.huawei.appmarket": {
+      "name": "华为应用市场",
+      "level": "Safe",
+      "reason": "独立应用商店，停用后仍可通过其他方式安装APK"
+    },
+    "com.huawei.music": {
+      "name": "华为音乐",
+      "level": "Safe",
+      "reason": "独立音乐播放器应用，停用不影响系统音频功能"
+    },
+    "com.huawei.music.local": {
+      "name": "华为音乐本地服务",
+      "level": "Safe",
+      "reason": "音乐应用的本地播放服务组件,停用后本地音乐无法播放,可用第三方播放器"
+    },
+    "com.huawei.himovie.local": {
+      "name": "华为视频本地服务",
+      "level": "Safe",
+      "reason": "视频应用的本地播放服务组件,停用后相册视频无法播放,可用第三方播放器"
+    },
+    "com.huawei.himovie.partner1": {
+      "name": "华为视频合作播放组件1",
+      "level": "Safe",
+      "reason": "视频应用的第三方内容合作组件"
+    },
+    "com.huawei.himovie.partner2": {
+      "name": "华为视频合作播放组件2",
+      "level": "Safe",
+      "reason": "视频应用的第三方内容合作组件"
+    },
+    "com.huawei.vassistant": {
+      "name": "智慧语音（小艺）",
+      "level": "Safe",
+      "reason": "小艺语音助手应用，停用后无法使用语音唤醒和语音控制"
+    },
+    "com.huawei.intelligent": {
+      "name": "智慧助手·今天（负一屏）",
+      "level": "Safe",
+      "reason": "负一屏智慧助手，停用后桌面负一屏恢复空白"
+    },
+    "com.huawei.search": {
+      "name": "智慧搜索",
+      "level": "Safe",
+      "reason": "全局搜索独立应用，停用后桌面下拉搜索不可用"
+    },
+    "com.huawei.ohos.search": {
+      "name": "鸿蒙智慧搜索",
+      "level": "Safe",
+      "reason": "鸿蒙版全局搜索应用"
+    },
+    "com.huawei.android.totemweather": {
+      "name": "华为天气",
+      "level": "Safe",
+      "reason": "独立天气应用，停用不影响其他天气数据源"
+    },
+    "com.huawei.email": {
+      "name": "电子邮件",
+      "level": "Safe",
+      "reason": "独立邮件客户端，停用后仍可用其他邮箱APP"
+    },
+    "com.huawei.notepad": {
+      "name": "备忘录",
+      "level": "Safe",
+      "reason": "独立备忘录应用，停用前建议备份重要笔记"
+    },
+    "com.huawei.calculator": {
+      "name": "计算器",
+      "level": "Safe",
+      "reason": "独立计算器应用"
+    },
+    "com.huawei.filemanager": {
+      "name": "文件管理",
+      "level": "Safe",
+      "reason": "文件管理器，停用后文件管理器不可用"
+    },
+    "com.huawei.ohos.famanager": {
+      "name": "服务中心（鸿蒙卡片）",
+      "level": "Safe",
+      "reason": "鸿蒙服务中心/万能卡片管理应用，独立功能可安全停用"
+    },
+    "com.huawei.filemanager.fa": {
+      "name": "文件管理快应用组件",
+      "level": "Safe",
+      "reason": "文件管理的快应用扩展组件"
+    },
+    "com.huawei.hidisk": {
+      "name": "云空间",
+      "level": "Safe",
+      "reason": "华为云空间独立应用，停用后无法使用云备份/同步功能"
+    },
+    "com.huawei.hidisk.fa": {
+      "name": "文件管理快应用组件",
+      "level": "Safe",
+      "reason": "文件管理的快应用扩展组件"
+    },
+    "com.huawei.photos": {
+      "name": "图库EMUI版",
+      "level": "Safe",
+      "reason": "独立图库应用，停用后仍可用第三方相册查看图片"
+    },
+    "com.huawei.ohos.photos": {
+      "name": "鸿蒙图库",
+      "level": "Safe",
+      "reason": "鸿蒙版图库应用"
+    },
+    "com.huawei.health": {
+      "name": "运动健康",
+      "level": "Safe",
+      "reason": "独立运动健康应用，停用后健康数据不再同步"
+    },
+    "com.huawei.ohos.health": {
+      "name": "鸿蒙运动健康",
+      "level": "Safe",
+      "reason": "鸿蒙版运动健康应用"
+    },
+    "com.huawei.hicloud": {
+      "name": "云空间",
+      "level": "Safe",
+      "reason": "独立云空间应用，停用后无法使用云备份/同步功能"
+    },
+    "com.huawei.wallet": {
+      "name": "华为钱包",
+      "level": "Safe",
+      "reason": "独立钱包应用，停用后NFC支付/门禁卡/交通卡不可用（但不会影响系统NFC硬件）"
+    },
+    "com.huawei.wallet.facard": {
+      "name": "钱包证件卡服务",
+      "level": "Safe",
+      "reason": "钱包的电子证件卡服务组件"
+    },
+    "com.huawei.hwpanpayservice": {
+      "name": "碰一碰支付服务",
+      "level": "Safe",
+      "reason": "碰一碰支付功能组件"
+    },
+    "com.huawei.screenrecorder": {
+      "name": "屏幕录制",
+      "level": "Safe",
+      "reason": "独立屏幕录制应用"
+    },
+    "com.huawei.soundrecorder": {
+      "name": "录音机EMUI版",
+      "level": "Safe",
+      "reason": "独立录音机应用"
+    },
+    "com.huawei.ohos.soundrecorder": {
+      "name": "鸿蒙录音机",
+      "level": "Safe",
+      "reason": "鸿蒙版录音机应用"
+    },
+    "com.huawei.scanner": {
+      "name": "智慧视觉",
+      "level": "Safe",
+      "reason": "扫一扫/识物/翻译/扫码等智慧视觉功能，独立应用"
+    },
+    "com.huawei.compass": {
+      "name": "指南针EMUI版",
+      "level": "Safe",
+      "reason": "独立指南针应用"
+    },
+    "com.huawei.hmos.compass": {
+      "name": "鸿蒙指南针",
+      "level": "Safe",
+      "reason": "鸿蒙版指南针应用"
+    },
+    "com.huawei.hicar": {
+      "name": "HiCar智行",
+      "level": "Safe",
+      "reason": "独立车载互联应用，停用后无法使用HiCar车载功能"
+    },
+    "com.huawei.gameassistant": {
+      "name": "应用助手（游戏空间）",
+      "level": "Safe",
+      "reason": "独立游戏辅助应用，停用后游戏加速/免打扰功能不可用"
+    },
+    "com.huawei.parentcontrol": {
+      "name": "健康使用手机",
+      "level": "Safe",
+      "reason": "独立屏幕时间管理应用"
+    },
+    "com.huawei.tips": {
+      "name": "玩机技巧（Tips机器人）",
+      "level": "Safe",
+      "reason": "系统内置使用技巧和提示应用，独立应用可安全停用"
+    },
+    "com.huawei.fastapp": {
+      "name": "快应用中心",
+      "level": "Safe",
+      "reason": "快应用运行框架，停用后无法使用快应用（但普通APP不受影响）"
+    },
+    "com.huawei.hwstartupguide": {
+      "name": "开机引导向导",
+      "level": "Safe",
+      "reason": "新机开机引导向导，正常使用后不再需要"
+    },
+    "com.huawei.skytone": {
+      "name": "天际通",
+      "level": "Safe",
+      "reason": "独立全球上网应用"
+    },
+    "com.huawei.phoneservice": {
+      "name": "服务（我的华为）",
+      "level": "Safe",
+      "reason": "华为服务应用（售后/社区/商城入口），独立应用可安全停用"
+    },
+    "com.huawei.privatespace": {
+      "name": "隐私空间",
+      "level": "Safe",
+      "reason": "独立隐私空间管理应用"
+    },
+    "com.huawei.aod": {
+      "name": "息屏显示（AOD）",
+      "level": "Basic",
+      "reason": "息屏显示功能，与锁屏/电源管理深度集成，停用后息屏不再显示时间通知"
+    },
+    "com.huawei.smarthome": {
+      "name": "智慧生活EMUI版",
+      "level": "Safe",
+      "reason": "独立智能家居控制应用"
+    },
+    "com.huawei.ohos.smarthome": {
+      "name": "鸿蒙智慧生活",
+      "level": "Safe",
+      "reason": "鸿蒙版智慧生活应用"
+    },
+    "com.huawei.livewallpaper.paradise": {
+      "name": "云山动态壁纸",
+      "level": "Safe",
+      "reason": "华为云山主题动态壁纸资源包"
+    },
+    "com.huawei.commonwallpaper": {
+      "name": "通用静态壁纸",
+      "level": "Safe",
+      "reason": "静态壁纸资源包"
+    },
+    "com.huawei.ar.measure": {
+      "name": "AR测量工具",
+      "level": "Safe",
+      "reason": "独立AR测量应用"
+    },
+    "com.huawei.onekeylock.hmservice": {
+      "name": "一键锁屏后台服务",
+      "level": "Safe",
+      "reason": "一键锁屏功能的后台服务"
+    },
+    "com.huawei.pcassistant": {
+      "name": "多屏协同PC助手",
+      "level": "Caution",
+      "reason": "多屏协同核心，深度集成系统，停用后PC协同全部不可用"
+    },
+    "com.huawei.mirror": {
+      "name": "投屏镜像服务",
+      "level": "Caution",
+      "reason": "系统投屏功能核心服务，停用后投屏功能全部失效"
+    },
+    "com.huawei.ohos.mirror": {
+      "name": "鸿蒙投屏镜像",
+      "level": "Caution",
+      "reason": "鸿蒙版投屏服务，停用后鸿蒙设备间投屏不可用"
+    },
+    "com.huawei.android.instantshare": {
+      "name": "华为分享",
+      "level": "Basic",
+      "reason": "系统级文件分享服务，停用后华为分享功能不可用"
+    },
+    "com.huawei.android.airsharing": {
+      "name": "空中分享服务",
+      "level": "Basic",
+      "reason": "华为分享无线传输的底层组件"
+    },
+    "com.huawei.hwireless": {
+      "name": "华为分享",
+      "level": "Basic",
+      "reason": "华为分享无线传输组件"
+    },
+    "com.huawei.hitouch": {
+      "name": "智慧识屏服务",
+      "level": "Basic",
+      "reason": "双指长按识屏功能，与系统UI深度集成"
+    },
+    "com.huawei.contactscamcard": {
+      "name": "名片扫描服务",
+      "level": "Safe",
+      "reason": "独立名片扫描识别应用"
+    },
+    "com.huawei.hicard": {
+      "name": "华为卡包服务",
+      "level": "Basic",
+      "reason": "钱包/电子卡片管理配套服务，停用后电子卡片功能不可用"
+    },
+    "com.huawei.hwread.dz.local": {
+      "name": "华为阅读本地服务",
+      "level": "Safe",
+      "reason": "华为阅读应用的本地服务组件"
+    },
+    "com.huawei.hmos.projectmenu": {
+      "name": "桌面工程菜单服务",
+      "level": "Basic",
+      "reason": "系统工程测试菜单，非普通用户功能，多为开发者/售后使用"
+    },
+    "com.huawei.desktop.systemui": {
+      "name": "桌面系统UI",
+      "level": "Caution",
+      "reason": "桌面模式（类三星DeX）的系统UI，停用后桌面投影/多屏模式异常，可能影响启动器稳定性"
+    },
+    "com.huawei.desktop.explorer": {
+      "name": "平板桌面文件资源管理器",
+      "level": "Basic",
+      "reason": "平板/桌面模式专属文件管理器组件"
+    },
+    "com.huawei.hwdockbar": {
+      "name": "平板任务坞条",
+      "level": "Basic",
+      "reason": "平板Dock任务栏系统组件"
+    },
+    "com.huawei.stylus.floatmenu": {
+      "name": "手写笔悬浮菜单",
+      "level": "Basic",
+      "reason": "M-Pencil手写笔悬浮快捷菜单，停用后手写笔快捷功能不可用"
+    },
+    "com.huawei.bonevoiceui": {
+      "name": "骨声纹插件",
+      "level": "Safe",
+      "reason": "骨声纹识别独立插件，配合耳机使用，停用后骨声纹识别功能不可用"
+    },
+    "com.huawei.onehopsvcclient": {
+      "name": "单跳连接客户端",
+      "level": "Basic",
+      "reason": "一碰传/一碰连等多设备快速连接客户端"
+    },
+    "com.huawei.HwMultiScreenShot": {
+      "name": "滚动截屏",
+      "level": "Safe",
+      "reason": "滚动/长截图的系统增强工具"
+    },
+    "com.huawei.android.FloatTasks": {
+      "name": "悬浮导航",
+      "level": "Safe",
+      "reason": "独立悬浮导航按钮应用，停用后悬浮导航球不可用但不影响系统分屏功能"
+    },
+    "com.huawei.android.UEInfoCheck": {
+      "name": "用户设备信息校验服务",
+      "level": "Basic",
+      "reason": "设备注册/身份认证服务，停用后可能影响部分华为账户功能"
+    },
+    "com.huawei.android.chr": {
+      "name": "华为用户行为统计服务",
+      "level": "Safe",
+      "reason": "用户体验改进计划统计服务，关闭用户体验计划后此服务即无用"
+    },
+    "com.huawei.android.AutoRegSms": {
+      "name": "短信自动注册服务",
+      "level": "Basic",
+      "reason": "运营商短信自动配置服务，换卡后可能需要手动配置网络参数"
+    },
+    "com.huawei.android.instantonline": {
+      "name": "极速联网服务",
+      "level": "Basic",
+      "reason": "网络加速和快速联网服务，停用后联网速度可能略降"
+    },
+    "com.huawei.android.internal.app": {
+      "name": "华为内部应用容器",
+      "level": "Caution",
+      "reason": "内部框架容器，承载系统级组件，停用可能导致部分系统功能异常"
+    },
+    "com.huawei.ohos.videoeditor": {
+      "name": "鸿蒙视频编辑器",
+      "level": "Safe",
+      "reason": "独立视频编辑应用"
+    },
+    "com.huawei.ohos.security.privacycenter": {
+      "name": "鸿蒙隐私中心",
+      "level": "Basic",
+      "reason": "系统安全隐私管理入口，涉及权限/隐私/安全设置"
+    },
+    "com.huawei.security.privacycenter": {
+      "name": "隐私中心EMUI版",
+      "level": "Basic",
+      "reason": "EMUI版隐私管理中心，同上"
+    },
+    "com.huawei.mmitest": {
+      "name": "MMIT硬件测试工具",
+      "level": "Basic",
+      "reason": "硬件诊断测试工具，售后检测手机硬件时可能用到"
+    },
+    "com.huawei.hwdetectrepair": {
+      "name": "智能检测与修复",
+      "level": "Basic",
+      "reason": "系统自检和自动修复功能，有一定售后使用场景"
+    },
+    "com.android.documentsui": {
+      "name": "文件访问界面（系统文件选择器）",
+      "level": "Caution",
+      "reason": "所有APP依赖的系统文件选择器，停用后任何APP都无法选择/上传文件"
+    },
+    "com.android.htmlviewer": {
+      "name": "HTML网页查看器",
+      "level": "Safe",
+      "reason": "系统内置HTML文件查看器，独立工具不影响网页浏览"
+    },
+    "com.android.companiondevicemanager": {
+      "name": "配套设备管理",
+      "level": "Caution",
+      "reason": "管理手表/耳机等蓝牙配件配对和连接的系统服务，停用后智能穿戴设备可能无法正常配对"
+    },
+    "com.android.apps.tag": {
+      "name": "NFC标签工具",
+      "level": "Safe",
+      "reason": "NFC标签读取/写入工具应用"
+    },
+    "com.android.printspooler": {
+      "name": "打印队列服务",
+      "level": "Basic",
+      "reason": "系统打印任务队列管理服务，停用后无法使用打印功能"
+    },
+    "com.android.shell": {
+      "name": "系统Shell终端",
+      "level": "Caution",
+      "reason": "ADB调试依赖的Shell服务，停用后将导致adb shell命令不可用，影响开发者调试"
+    },
+    "com.android.internal.systemui.navbar.gestural": {
+      "name": "手势导航栏UI",
+      "level": "Caution",
+      "reason": "系统手势导航核心组件，停用可能导致屏幕底部导航手势全部失效"
+    },
+    "com.android.wallpapercropper": {
+      "name": "壁纸裁剪工具",
+      "level": "Safe",
+      "reason": "壁纸裁剪编辑工具，独立小工具"
+    },
+    "com.android.wallpaper.livepicker": {
+      "name": "动态壁纸选择器",
+      "level": "Safe",
+      "reason": "动态壁纸选择界面组件"
+    },
+    "com.huawei.systemmanager": {
+      "name": "手机管家",
+      "level": "Caution",
+      "reason": "系统级管理工具，涉及病毒扫描/流量管理/电池优化/权限管理等多项系统功能"
+    },
+    "com.huawei.controlcenter": {
+      "name": "控制中心",
+      "level": "Caution",
+      "reason": "下拉控制中心界面组件，停用后控制中心无法展开"
+    },
+    "com.huawei.android.hwouc": {
+      "name": "系统更新",
+      "level": "Caution",
+      "reason": "系统OTA更新服务，停用后将无法收到系统更新推送,可以停用"
+    },
+    "com.huawei.nearby": {
+      "name": "近距离快连服务",
+      "level": "Caution",
+      "reason": "近距离设备快速发现和连接服务，被华为分享/多屏协同等功能依赖"
+    },
+    "com.sohu.sohuvideo.emplayer": {
+      "name": "讯飞语音引擎",
+      "level": "Safe",
+      "reason": "讯飞语音合成引擎SDK，由华为语音相关功能调用，不影响系统功能"
+    },
+    "com.tencent.qqlivehuawei": {
+      "name": "腾讯视频播放内核",
+      "level": "Safe",
+      "reason": "腾讯视频播放器SDK内核，由华为视频调用，不影响系统功能"
+    },
+    "com.unionpay.tsmservice": {
+      "name": "银联可信安全服务",
+      "level": "Safe",
+      "reason": "银联支付安全服务，主要用于银行APP，不影响系统支付功能"
+    },
+    "com.bjbyhd.screenreader_huawei": {
+      "name": "屏幕朗读（随选朗读）",
+      "level": "Safe",
+      "reason": "辅助功能的屏幕朗读服务，非视障用户可安全停用"
+    },
+    "com.baidu.input_huawei": {
+      "name": "百度输入法（华为版）",
+      "level": "Safe",
+      "reason": "百度输入法定制版，停用前请务必在设置中关闭安全键盘，否则支付密码无法输入"
+    },
+    "com.android.mediacenter": {
+      "name": "华为音乐（旧版）",
+      "level": "Safe",
+      "reason": "华为音乐播放器旧版本，独立应用可安全停用"
+    },
+    "com.example.android.notepad": {
+      "name": "备忘录",
+      "level": "Safe",
+      "reason": "系统备忘录独立应用，停用前建议备份重要笔记"
+    },
+    "com.google.android.marvin.talkback": {
+      "name": "无障碍服务（随选朗读）",
+      "level": "Safe",
+      "reason": "谷歌TalkBack屏幕朗读无障碍服务，停用后语音朗读辅助功能不可用"
+    },
+    "com.huawei.spaceservice": {
+      "name": "地理围栏服务",
+      "level": "Caution",
+      "reason": "地理围栏事件触发服务，被情景智能/智慧提醒等位置触发功能依赖"
+    },
+    "com.huawei.livewallpaper.mountaincloud": {
+      "name": "探索动态壁纸",
+      "level": "Safe",
+      "reason": "华为探索主题动态壁纸资源包"
+    },
+    "com.android.dreams.basic": {
+      "name": "屏保图片程序",
+      "level": "Safe",
+      "reason": "早期安卓遗留的屏保/白日梦功能，现已基本不使用"
+    },
+    "com.huawei.bd": {
+      "name": "用户体验计划",
+      "level": "Safe",
+      "reason": "用户体验改进计划数据上报服务，持续后台运行耗电耗内存，建议停用"
+    },
+    "com.huawei.hifolder": {
+      "name": "精品推荐",
+      "level": "Safe",
+      "reason": "华为精品推荐/广告推送服务，纯广告组件，建议停用或卸载"
+    },
+    "com.huawei.vrservice": {
+      "name": "AR引擎服务",
+      "level": "Caution",
+      "reason": "AR增强现实引擎服务，华为AR测距等AR功能依赖此组件"
+    },
+    "com.huawei.videoeditor": {
+      "name": "花瓣剪辑",
+      "level": "Safe",
+      "reason": "华为视频编辑独立应用（花瓣剪辑），可安全停用"
+    },
+    "com.huawei.meetime": {
+      "name": "畅连",
+      "level": "Safe",
+      "reason": "华为畅连通讯应用，独立即时通讯工具可安全停用"
+    },
+    "com.huawei.android.findmyphone": {
+      "name": "查找手机",
+      "level": "Basic",
+      "reason": "查找手机安全功能应用，涉及设备丢失定位/锁定等安全场景"
+    },
+    "com.huawei.localBackup": {
+      "name": "备份",
+      "level": "Safe",
+      "reason": "系统本地备份应用，可安全停用（建议用云空间代替）"
+    },
+    "com.huawei.android.thememanager": {
+      "name": "主题",
+      "level": "Safe",
+      "reason": "华为主题商店和应用管理，独立应用可安全停用"
+    },
+    "com.android.calculator2": {
+      "name": "计算器",
+      "level": "Safe",
+      "reason": "安卓原生计算器应用（AOSP版），独立应用可安全停用"
+    },
+    "com.android.deskclock": {
+      "name": "时钟",
+      "level": "Basic",
+      "reason": "安卓原生时钟/闹钟应用（AOSP版），停用后闹钟功能不可用"
+    },
+    "com.huawei.himovie": {
+      "name": "华为视频",
+      "level": "Safe",
+      "reason": "华为视频独立应用，可安全停用不影响媒体播放能力"
+    },
+    "com.huawei.hwireader": {
+      "name": "华为阅读",
+      "level": "Safe",
+      "reason": "华为阅读独立应用，可安全停用"
+    },
+    "com.huawei.android.karaoke": {
+      "name": "K歌特效",
+      "level": "Safe",
+      "reason": "华为K歌/卡拉OK特效独立组件，可安全停用"
+    },
+    "com.huawei.android.projectmenu": {
+      "name": "工程菜单",
+      "level": "Basic",
+      "reason": "系统工程测试菜单，开发者/售后调试使用，普通用户不需要"
+    },
+    "com.huawei.hiskytone": {
+      "name": "天际通",
+      "level": "Safe",
+      "reason": "天际通全球上网独立应用（另见com.huawei.skytone为同一应用不同版本）"
+    }
+  },
+  "keywords": {
+    "launcher": "桌面启动器",
+    "systemui": "系统界面",
+    "settings": "设置",
+    "setup": "设置向导",
+    "wizard": "引导向导",
+    "guide": "开机引导",
+    "startup": "开机引导",
+    "camera": "相机",
+    "gallery": "图库",
+    "photos": "图库",
+    "photo": "图库",
+    "picture": "图片",
+    "image": "图片",
+    "video": "视频",
+    "movie": "视频",
+    "player": "播放器",
+    "music": "音乐",
+    "audio": "音频",
+    "media": "媒体",
+    "recorder": "录音机",
+    "soundrecorder": "录音机",
+    "voicerecorder": "录音机",
+    "screenrecorder": "屏幕录制",
+    "screenshot": "截图",
+    "multimedia": "多媒体",
+    "phone": "电话",
+    "call": "通话",
+    "dialer": "拨号器",
+    "incallui": "通话界面",
+    "sms": "短信",
+    "mms": "彩信",
+    "message": "信息",
+    "messaging": "信息",
+    "contacts": "联系人",
+    "contact": "联系人",
+    "addressbook": "通讯录",
+    "emergency": "紧急求助",
+    "stk": "SIM卡工具包",
+    "sim": "SIM卡",
+    "telephony": "通话服务",
+    "clock": "时钟",
+    "alarm": "闹钟",
+    "timer": "计时器",
+    "calendar": "日历",
+    "schedule": "日程",
+    "reminder": "提醒",
+    "calculator": "计算器",
+    "calc": "计算器",
+    "compass": "指南针",
+    "notes": "备忘录",
+    "notepad": "备忘录",
+    "memo": "备忘录",
+    "filemanager": "文件管理",
+    "filemgr": "文件管理",
+    "files": "文件管理",
+    "explorer": "文件管理",
+    "document": "文档",
+    "scanner": "扫一扫",
+    "scan": "扫描",
+    "torch": "手电筒",
+    "flashlight": "手电筒",
+    "mirror": "镜子",
+    "ruler": "尺子",
+    "level": "水平仪",
+    "measure": "测量",
+    "barcode": "条码扫描",
+    "browser": "浏览器",
+    "chrome": "浏览器",
+    "edge": "浏览器",
+    "ucbrowser": "UC浏览器",
+    "webview": "网页组件",
+    "wifi": "Wi-Fi服务",
+    "wlan": "WLAN服务",
+    "bluetooth": "蓝牙",
+    "nfc": "NFC服务",
+    "network": "网络服务",
+    "connectivity": "连接服务",
+    "vpn": "VPN服务",
+    "proxy": "代理服务",
+    "hotspot": "热点",
+    "cloud": "云服务",
+    "sync": "同步服务",
+    "backup": "备份",
+    "restore": "恢复",
+    "drive": "云盘",
+    "storage": "存储",
+    "market": "应用市场",
+    "appstore": "应用商店",
+    "store": "应用商店",
+    "download": "下载管理",
+    "weather": "天气",
+    "email": "电子邮件",
+    "mail": "邮件",
+    "exchange": "Exchange邮件",
+    "maps": "地图",
+    "map": "地图",
+    "navigation": "导航",
+    "navigator": "导航",
+    "location": "定位服务",
+    "gps": "GPS服务",
+    "places": "地点",
+    "transit": "交通",
+    "health": "健康",
+    "fitness": "运动",
+    "sport": "运动",
+    "step": "计步器",
+    "pedometer": "计步器",
+    "heart": "心率",
+    "sleep": "睡眠",
+    "bloodpressure": "血压",
+    "weight": "体重",
+    "diet": "饮食",
+    "wallet": "钱包",
+    "pay": "支付",
+    "payment": "支付",
+    "alipay": "支付宝",
+    "wechat": "微信",
+    "unionpay": "银联",
+    "qq": "QQ",
+    "weibo": "微博",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "messenger": "Messenger",
+    "social": "社交",
+    "assistant": "语音助手",
+    "voice": "语音",
+    "speech": "语音",
+    "ai": "AI引擎",
+    "intelligent": "智慧助手",
+    "suggestion": "推荐服务",
+    "game": "游戏",
+    "gaming": "游戏",
+    "gametools": "游戏工具",
+    "gamebar": "游戏栏",
+    "reader": "阅读",
+    "reading": "阅读",
+    "ebook": "电子书",
+    "book": "电子书",
+    "news": "新闻",
+    "feed": "资讯",
+    "magazine": "杂志",
+    "rss": "RSS订阅",
+    "shop": "购物",
+    "shopping": "购物",
+    "mall": "商城",
+    "taobao": "淘宝",
+    "jd": "京东",
+    "pdd": "拼多多",
+    "inputmethod": "输入法",
+    "input": "输入法",
+    "keyboard": "输入法",
+    "ime": "输入法",
+    "handwriting": "手写输入",
+    "pinyin": "拼音输入",
+    "smarthome": "智慧生活",
+    "home": "智能家居",
+    "iot": "物联网",
+    "device": "设备",
+    "controller": "控制器",
+    "remote": "遥控器",
+    "security": "安全",
+    "antivirus": "杀毒",
+    "cleaner": "清理",
+    "cleanup": "清理",
+    "clean": "清理",
+    "optimizer": "优化",
+    "booster": "加速",
+    "privacy": "隐私",
+    "permission": "权限管理",
+    "password": "密码",
+    "lock": "锁屏",
+    "theme": "主题",
+    "wallpaper": "壁纸",
+    "livewallpaper": "动态壁纸",
+    "font": "字体",
+    "icon": "图标",
+    "style": "美化",
+    "manager": "管理器",
+    "config": "配置",
+    "profile": "配置",
+    "monitor": "监控",
+    "log": "日志",
+    "debug": "调试",
+    "diagnosis": "诊断",
+    "test": "测试",
+    "update": "更新",
+    "upgrade": "升级",
+    "ota": "系统更新",
+    "patch": "补丁",
+    "card": "卡包",
+    "note": "笔记",
+    "clipboard": "剪贴板",
+    "share": "分享",
+    "print": "打印",
+    "tips": "使用技巧",
+    "help": "帮助",
+    "feedback": "反馈",
+    "report": "报告",
+    "search": "搜索",
+    "translate": "翻译",
+    "plugin": "插件",
+    "extension": "扩展",
+    "service": "服务",
+    "server": "服务端",
+    "client": "客户端",
+    "lib": "库文件",
+    "sdk": "SDK组件",
+    "api": "API服务",
+    "demo": "演示",
+    "sample": "示例",
+    "providers": "数据存储",
+    "provider": "数据存储",
+    "res": "资源包",
+    "overlay": "覆盖层"
+  }
+}
