@@ -1,22 +1,92 @@
-# ADBSweep - 安卓系统包名数据库
+# ADBSweep 工具箱
 
-为 [ADBSweep 工具箱](https://github.com/cayuensui/ADBSweep) 提供**热更新**的系统包名数据，帮助用户安全地识别和停用安卓系统预装应用。
+一款基于 WPF 的安卓系统应用管理工具箱，内置丰富的包名数据库，帮助用户安全地识别和管理安卓预装应用。
 
-## 📊 安全等级分类
+## 🧰 项目组成
 
-| 等级 | 标识 | 含义 | 说明 |
-|------|------|------|------|
-| **Forbidden** | 🔴 禁止 | 核心系统进程 | 停用/卸载将导致手机故障，**严禁操作** |
-| **Caution** | 🟡 谨慎 | 系统服务/框架/引擎 | 停用可能导致部分功能异常，需二次确认 |
-| **Basic** | 🟠 基础 | 基础功能应用 | 电话/短信/时钟/相机/联系人等，可停用但强烈不建议卸载 |
-| **Safe** | 🟢 安全 | 独立应用 | 可自由停用，不影响系统正常运行 |
+| 项目 | 类型 | 说明 |
+|------|------|------|
+| **AdbSweep** | WPF 桌面应用 | 主工具，通过 ADB 连接安卓设备，查看/停用/启用/卸载系统应用 |
+| **AdbSweepEditor** | WPF 桌面应用 | 包名数据库可视化编辑器，用于维护 `packages.json` 数据 |
 
-### 分类原则
+---
 
-- **Forbidden**：`android`（系统框架）、`systemui`（系统界面）、`settings`（设置）等硬件抽象层和核心进程
-- **Caution**：输入法引擎、蓝牙/ NFC 中间件、运营商配置、打印服务等非必要但影响功能的组件
-- **Basic**：拨号、通讯录、相机、日历、闹钟等用户可自行安装替代品的基础应用
-- **Safe**：厂商预装的第三方应用、云服务客户端、游戏、演示程序等
+## 🔧 AdbSweep — 主工具
+
+### 功能概览
+
+- **ADB 设备连接**：智能检测 ADB 路径（内置 platform-tools → 本地 → PATH → Android SDK），自动识别设备品牌/型号/序列号
+- **系统应用列表**：通过 `adb shell pm list packages -s` 获取全部系统应用，按安全等级着色
+- **应用操作**：停用（推荐）/ 启用 / 卸载 / 打开应用 / 备份 APK
+- **右键菜单**：快速操作 + 搜索（Bing / 秘塔 AI / 纳米 AI）+ 复制包名
+- **操作历史**：记录所有操作，支持一键恢复全部已停用应用
+- **热更新**：启动时自动从 GitHub 拉取最新包名数据库，无需更新软件
+- **数据导出**：按安全等级筛选导出 JSON
+- **命令行参数**：支持 `--console` 交互模式、`--auto-disable` 批量禁用
+
+### 安全等级分类
+
+| 等级 | 颜色 | 含义 | 停用 | 启用 | 卸载 |
+|------|------|------|------|------|------|
+| **Forbidden** | 🔴 红色 | 核心系统进程 | ❌ 硬拦截 | ❌ 按钮禁用 | ❌ 硬拦截 |
+| **Caution** | 🟡 黄色 | 系统服务/框架/引擎 | ⚠️ 1次确认 | ✅ 直接执行 | 🚫 2次确认 |
+| **Basic** | 🔵 蓝色 | 基础功能应用 | ⚠️ 1次确认 | ✅ 直接执行 | 🚫 2次确认 |
+| **Safe** | 🟢 绿色 | 独立应用 | ✅ 直接执行 | ✅ 直接执行 | ⚠️ 2次确认 |
+| **Unknown** | 🟠 橙色 | 未收录包名 | ⚠️ 1次确认 | ✅ 直接执行 | 🚫 2次确认 |
+
+### 热更新机制
+
+```
+启动 → 读取云端 version → 比本地新？→ 下载覆盖缓存 → 完成
+                               ↓
+                             版本相同 → 跳过
+                               ↓
+                             网络失败 → 静默使用本地缓存 + 内置兜底
+```
+
+**代理加速**：设置中可填入任意第三方代理前缀（如 `https://ghfast.top/`），自动拼接默认 GitHub Raw 源：
+
+```
+{代理前缀} + raw.githubusercontent.com/.../packages.json
+```
+
+留空则直连 GitHub Raw。用户可根据网络环境自由配置。
+
+### 数据加载策略
+
+```
+优先级 1 → 云端缓存 JSON（packages_cache.json），含完整 5 级分类
+优先级 2 → 内置硬编码兜底
+                ├── Forbidden 级别的核心包名（约30条，确保离线时也阻止破坏性操作）
+                └── 关键词映射（约120+，从未收录包名智能推测中文名）
+                └── 其余包名 → 标记为 Unknown（橙色），同步数据后恢复正常分类
+```
+
+> **内置仅保留最核心的防护数据**，完整数据库（Caution/Basic/Safe 全部分类）通过热更新从云端获取。
+
+---
+
+## ✏️ AdbSweepEditor — 包名数据库编辑器
+
+### 功能概览
+
+- **可视化编辑**：直观编辑包名中文名称、安全等级、功能简述、停用后果
+- **实时自动保存**：修改等级、编辑文本失焦时自动写回 `packages.json`
+- **搜索与筛选**：按包名/中文名搜索，按安全等级/核验状态筛选
+- **核验标记**：每个条目可标记为"已核验"，跟踪数据审核进度
+- **重复包名处理**：导入时自动检测并让用户选择保留哪个版本
+- **快捷预设**：预设用途描述文本，一键追加到原因字段
+- **右键操作**：快速设置安全等级、复制包名、在线搜索、删除条目
+- **导航与快捷键**：上下导航、`Ctrl+S` 导出、`Ctrl+Z` 还原
+
+### 使用场景
+
+1. **ADBSweep** 连接设备 → 同步云端数据 → 导出设备包名 JSON
+2. **AdbSweepEditor** 导入上述 JSON → 逐条核验数据准确性 → 标记"已核验"
+3. 未收录包名（Unknown）→ 设置等级、填写中文名称和停用后果 → 导出
+4. 将编辑后的 `packages.json` 提交 PR 至本仓库
+
+---
 
 ## 📦 数据格式
 
@@ -28,7 +98,7 @@
     "包名": {
       "name": "中文名称",
       "level": "安全等级",
-      "reason": "停用/卸载后果说明"
+      "reason": "停用/卸载后的影响说明"
     }
   },
   "keywords": {
@@ -43,11 +113,11 @@
 |------|------|------|------|
 | `version` | int | ✅ | 版本号，每次更新 +1（触发客户端热更新） |
 | `updatedAt` | string | ✅ | 更新日期，`YYYY-MM-DD` 格式 |
-| `packages` | object | ✅ | 包名字典，key 为安卓包名 |
+| `packages` | object | ✅ | 包名字典，key 为安卓完整包名 |
 | `packages.<key>.name` | string | ✅ | 包的中文名称 |
-| `packages.<key>.level` | string | ✅ | 安全等级：`Forbidden` / `Caution` / `Basic` / `Safe` |
+| `packages.<key>.level` | string | ✅ | `Forbidden` / `Caution` / `Basic` / `Safe` / `Unknown` |
 | `packages.<key>.reason` | string | ✅ | 停用或卸载后的影响说明 |
-| `keywords` | object | ✅ | 关键词映射，帮助工具智能识别未知包名 |
+| `keywords` | object | ✅ | 关键词→中文名映射，用于智能识别未知包名 |
 
 ### 示例
 
@@ -65,6 +135,11 @@
       "name": "小米云服务",
       "level": "Safe",
       "reason": "小米云同步服务，不需要云同步可停用"
+    },
+    "com.example.unknown": {
+      "name": "未知应用",
+      "level": "Unknown",
+      "reason": "未收录的包名，需人工审核"
     }
   },
   "keywords": {
@@ -74,9 +149,39 @@
 }
 ```
 
+---
+
+## 🚀 构建
+
+### 环境要求
+
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/download) 或更高版本
+- Windows 10+ (x64)
+
+```bash
+# 主工具
+cd AdbSweep
+dotnet publish -c Release -r win-x64 --self-contained false
+
+# 编辑器
+cd AdbSweepEditor
+dotnet publish -c Release -r win-x64 --self-contained false
+```
+
+发布输出到 `bin/Release/net10.0-windows/win-x64/publish/` 目录。
+
+---
+
 ## 🤝 如何贡献
 
-### 提交新包名 / 修正数据
+### 方式一：使用编辑器（推荐）
+
+1. 下载 [AdbSweepEditor](https://github.com/cayuensui/ADBSweep/releases) 编辑器
+2. 打开云端最新的 `packages.json`
+3. 新增或修正包名数据，自动保存到 JSON
+4. 提交 PR 至本仓库
+
+### 方式二：直接编辑 JSON
 
 1. **Fork** 本仓库
 2. 编辑 `packages.json`：
@@ -101,36 +206,31 @@
 
 - [ ] JSON 格式有效（可用 [JSONLint](https://jsonlint.com/) 验证）
 - [ ] 包名使用完整的安卓包名格式（如 `com.xiaomi.xxx`）
-- [ ] `level` 为四个有效值之一：`Forbidden` / `Caution` / `Basic` / `Safe`
+- [ ] `level` 为有效值：`Forbidden` / `Caution` / `Basic` / `Safe` / `Unknown`
 - [ ] `name` 简洁明了，不包含品牌名（如用「云服务」而非「小米云服务」）
 - [ ] `reason` 清楚说明停用/卸载的实际影响
 - [ ] `version` 已 +1，`updatedAt` 已更新
 - [ ] 新条目按字母顺序排列在正确位置
 
-## 🔄 热更新机制
+---
 
-ADBSweep 工具箱启动时会自动检查本仓库的 `version` 字段：
+## 📂 项目结构
 
 ```
-启动 → 读取云端 version → 比本地新？→ 下载覆盖缓存 → 完成
-                                ↓
-                              版本相同 → 跳过
-                                ↓
-                              网络失败 → 静默使用本地数据
+adb_tool/
+├── README.md
+├── packages.json               # 安卓系统包名数据库（云端数据源）
+├── AdbSweep/                   # 主工具 — WPF 桌面应用
+│   ├── MainWindow.xaml/.cs     # 主界面
+│   ├── Models/                 # 数据模型
+│   ├── Services/               # ADB/历史/更新/设置服务
+│   └── platform-tools/         # 内置 ADB 工具
+├── AdbSweepEditor/             # 数据库编辑器 — WPF 桌面应用
+│   ├── MainWindow.xaml/.cs     # 编辑器界面
+│   ├── Models/                 # 数据模型
+│   └── Converters/             # 值转换器
 ```
-
-用户也可在设置中配置 CDN 加速源（jsDelivr / Staticaly / Fastly）以改善国内网络环境。
-
-### CDN 加速直链
-
-如果 GitHub Raw 访问不稳定，可以使用以下 CDN 替换默认源：
-
-| CDN | URL 格式 |
-|-----|----------|
-| GitHub Raw（默认） | `https://raw.githubusercontent.com/cayuensui/ADBSweep/main/packages.json` |
-| jsDelivr | `https://cdn.jsdelivr.net/gh/cayuensui/ADBSweep@main/packages.json` |
-| Staticaly | `https://cdn.staticaly.com/gh/cayuensui/ADBSweep/main/packages.json` |
 
 ## 📄 许可
 
-本数据库仅供学习和研究用途。包名数据来源于公开信息收集和社区贡献。
+本工具箱仅供学习和研究用途。包名数据来源于公开信息收集和社区贡献。
