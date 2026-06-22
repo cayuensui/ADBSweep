@@ -100,8 +100,8 @@
     },
     "com.huawei.ohos.hiwindow": {
       "name": "鸿蒙窗口管理服务",
-      "level": "Forbidden",
-      "reason": "窗口管理的底层服务，停用后多任务/分屏/悬浮窗全部失效"
+      "level": "Caution",
+      "reason": "窗口管理的底层服务，停用后多任务/分屏/悬浮窗全部失效\n停用后果：非纯血版系统或不使用鸿蒙多设备协调可以停用"
     },
     "com.huawei.powergenie": {
       "name": "电源智能引擎",
@@ -351,7 +351,7 @@
     "com.huawei.ohos.collaborationcenter": {
       "name": "鸿蒙协同中心",
       "level": "Caution",
-      "reason": "鸿蒙万能卡片和跨设备流转的协同管理中心，停用后万能卡片服务和多设备协同功能失效"
+      "reason": "鸿蒙万能卡片和跨设备流转的协同管理中心，停用后万能卡片服务和多设备协同功能失效\n停用后果：非纯血版系统或不使用鸿蒙多设备协调可以停用"
     },
     "com.huawei.iconnect": {
       "name": "智能互联服务",
@@ -421,7 +421,7 @@
     "com.huawei.hwasm": {
       "name": "鸿蒙WASM运行容器",
       "level": "Caution",
-      "reason": "鸿蒙WebAssembly运行环境，停用后部分鸿蒙应用/小程序不可用"
+      "reason": "鸿蒙WebAssembly运行环境，停用后部分鸿蒙应用/小程序不可用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.motionservice": {
       "name": "悬浮球",
@@ -450,8 +450,8 @@
     },
     "com.huawei.ohos.suggestion": {
       "name": "智慧建议",
-      "level": "Caution",
-      "reason": "鸿蒙版系统级智慧建议引擎，负一屏/情景推荐等服务依赖此组件"
+      "level": "Safe",
+      "reason": "鸿蒙版系统级智慧建议引擎，负一屏/情景推荐等服务依赖此组件\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.recsys": {
       "name": "内容推荐服务",
@@ -540,8 +540,8 @@
     },
     "com.huawei.ohos.systemmanager": {
       "name": "鸿蒙系统管理服务",
-      "level": "Caution",
-      "reason": "鸿蒙系统层面的管理服务"
+      "level": "Forbidden",
+      "reason": "鸿蒙系统层面的管理服务\n停用后果：禁止停用，停用后将导致系统严重异常"
     },
     "com.huawei.devicemanager": {
       "name": "设备管理服务",
@@ -706,7 +706,7 @@
     "com.huawei.ohos.mms": {
       "name": "鸿蒙信息",
       "level": "Basic",
-      "reason": "鸿蒙系统默认短信应用，停用前请确保已安装其他短信应用替代"
+      "reason": "鸿蒙系统默认短信应用，停用前请确保已安装其他短信应用替代\n停用后果：非纯血版系统可以停用"
     },
     "com.android.stk": {
       "name": "SIM卡工具包",
@@ -751,17 +751,17 @@
     "com.huawei.ohos.camera": {
       "name": "鸿蒙相机",
       "level": "Basic",
-      "reason": "鸿蒙系统默认相机应用，停用前请确保已安装其他相机应用替代"
+      "reason": "鸿蒙系统默认相机应用，停用前请确保已安装其他相机应用替代\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.ohos.inputmethod": {
       "name": "鸿蒙输入法",
       "level": "Basic",
-      "reason": "鸿蒙系统默认输入法，停用前请确保已安装其他输入法"
+      "reason": "鸿蒙系统默认输入法，停用前请确保已安装其他输入法\n停用后果：非纯血版系统可以停用"
     },
     "ohos.media.medialibrary": {
       "name": "鸿蒙媒体库",
       "level": "Basic",
-      "reason": "鸿蒙原生媒体库接口，超级中转站/图库智能分类/系统级文件分享等鸿蒙新特性均依赖此组件"
+      "reason": "鸿蒙原生媒体库接口，超级中转站/图库智能分类/系统级文件分享等鸿蒙新特性均依赖此组件\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.browser": {
       "name": "华为浏览器",
@@ -821,7 +821,7 @@
     "com.huawei.ohos.search": {
       "name": "鸿蒙智慧搜索",
       "level": "Safe",
-      "reason": "鸿蒙版全局搜索应用"
+      "reason": "鸿蒙版全局搜索应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.android.totemweather": {
       "name": "华为天气",
@@ -851,7 +851,7 @@
     "com.huawei.ohos.famanager": {
       "name": "服务中心（鸿蒙卡片）",
       "level": "Safe",
-      "reason": "鸿蒙服务中心/万能卡片管理应用，独立功能可安全停用"
+      "reason": "鸿蒙服务中心/万能卡片管理应用，独立功能可安全停用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.filemanager.fa": {
       "name": "文件管理扩展组件",
@@ -876,7 +876,7 @@
     "com.huawei.ohos.photos": {
       "name": "鸿蒙图库",
       "level": "Safe",
-      "reason": "鸿蒙版图库应用"
+      "reason": "鸿蒙版图库应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.health": {
       "name": "运动健康",
@@ -886,7 +886,7 @@
     "com.huawei.ohos.health": {
       "name": "鸿蒙运动健康",
       "level": "Safe",
-      "reason": "鸿蒙版运动健康应用"
+      "reason": "鸿蒙版运动健康应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.hicloud": {
       "name": "云空间",
@@ -921,7 +921,7 @@
     "com.huawei.ohos.soundrecorder": {
       "name": "鸿蒙录音机",
       "level": "Safe",
-      "reason": "鸿蒙版录音机应用"
+      "reason": "鸿蒙版录音机应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.scanner": {
       "name": "智慧视觉",
@@ -936,7 +936,7 @@
     "com.huawei.hmos.compass": {
       "name": "鸿蒙指南针",
       "level": "Safe",
-      "reason": "鸿蒙版指南针应用"
+      "reason": "鸿蒙版指南针应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.hicar": {
       "name": "HiCar智行",
@@ -996,7 +996,7 @@
     "com.huawei.ohos.smarthome": {
       "name": "鸿蒙智慧生活",
       "level": "Safe",
-      "reason": "鸿蒙版智慧生活应用"
+      "reason": "鸿蒙版智慧生活应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.livewallpaper.paradise": {
       "name": "云山动态壁纸",
@@ -1031,7 +1031,7 @@
     "com.huawei.ohos.mirror": {
       "name": "鸿蒙投屏镜像",
       "level": "Caution",
-      "reason": "鸿蒙版投屏服务，停用后鸿蒙设备间投屏不可用"
+      "reason": "鸿蒙版投屏服务，停用后鸿蒙设备间投屏不可用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.android.instantshare": {
       "name": "华为分享",
@@ -1141,12 +1141,12 @@
     "com.huawei.ohos.videoeditor": {
       "name": "鸿蒙视频编辑器",
       "level": "Safe",
-      "reason": "独立视频编辑应用"
+      "reason": "独立视频编辑应用\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.ohos.security.privacycenter": {
       "name": "鸿蒙隐私中心",
       "level": "Basic",
-      "reason": "系统安全隐私管理入口，涉及权限/隐私/安全设置"
+      "reason": "系统安全隐私管理入口，涉及权限/隐私/安全设置\n停用后果：非纯血版系统可以停用"
     },
     "com.huawei.security.privacycenter": {
       "name": "隐私中心EMUI版",
@@ -2350,8 +2350,8 @@
     },
     "com.miui.miwallpaper": {
       "name": "小米壁纸",
-      "level": "Safe",
-      "reason": "壁纸商店APP，默认壁纸正常显示"
+      "level": "Basic",
+      "reason": "小米壁纸应用\n停用后果：停用后桌面壁纸会变黑"
     },
     "com.miui.newhome": {
       "name": "桌面扩展",
